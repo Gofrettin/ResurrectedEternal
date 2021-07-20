@@ -102,10 +102,10 @@ namespace RRFull.Skills
                 return;
             IntPtr _addr = Client.m_dwGlowManager.m_pGlowArray + (idx * 0x38);
 
-            var verify = MemoryLoader.instance.Reader.Read<IntPtr>(_addr);
+            //var verify = MemoryLoader.instance.Reader.Read<IntPtr>(_addr);
             //ILog.AddToLog("[GLOW]Before Write - Verify ", idx + " " + verify.ToString());
-            if (verify == IntPtr.Zero || glowObject.dwEntity != verify)
-                return;
+            //if (verify == IntPtr.Zero || glowObject.dwEntity != verify)
+            //    return;
             MemoryLoader.instance.Reader.Write<Vector3>(_addr + 0x08,
                 new Vector3(0f,
                 0f,
