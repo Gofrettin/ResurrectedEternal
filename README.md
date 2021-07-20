@@ -18,6 +18,14 @@ Featuring
 7. integrated sound engine using NAudio to play hitmarker sounds, quake sounds and your favourite meme sounds 
 8. plus millions of other features and (nearly) all engine entities are included.
 
+Including
+1. Netvardumper
+2. Modular Signature Scanner (support for hazedumper signatures)
+3. Dynamic Menu drawing by config components
+4. Model Precache Table
+5. Precached Console Variables and Commands
+6. Reflective Engine Copy inside Memory
+
 <br>
 <a href="https://rrcheats.eu/page/features">Compiled list of (mostly) all Features here.</a><br><br>
 <br>
@@ -28,6 +36,14 @@ Uses Fody Weavers to compile single executable.
 
 # Instructions
 
+### How to Run:
+1. <a href="https://www.foreverware.gay/page/install" target="_blank">Download Hack</a>
+2. Put Hack somewhere safe. (C:\notahack\AABBCCDD3344.exe)
+3. Run Hack or CSGO.
+4. Run CSGO or Hack.
+5. ???
+6. Profit!
+
 ### How to Compile:
 1. Download 
 2. Open .sln 
@@ -36,14 +52,6 @@ Uses Fody Weavers to compile single executable.
 5. Hit Compile. 
 6. ??? 
 7. Profit!
-
-### How to Run:
-1. <a href="https://www.foreverware.gay/page/install" target="_blank">Download Hack</a>
-2. Put Hack somewhere safe. (C:\notahack\AABBCCDD3344.exe)
-3. Run Hack or CSGO.
-4. Run CSGO or Hack.
-5. ???
-6. Profit!
 
 ### How to Navigate
 
