@@ -53,6 +53,17 @@ Uses Fody Weavers to compile single executable.
 6. ??? 
 7. Profit!
 
+## Updating Offsets
+~~Inside GenericObjects folder you can find the "equivalent" file for updating the offsets.<br>
+The only one you really need to update is the <strong>dwGetAllClasses</strong> offset since the signature scanner cant find it.<br>~~
+A couple of offsets can be found inside various components. Most prevailant in SkillModNeon.cs
+<br>
+
+## Updating Signatures
+All necessary signatures are included and the hack should work until the next signature breaking update.<br>
+If a signature breaks you can update the ./configs/signatures.json file or update the sigs inside the Generators.cs and delete the signatures.json. <br>
+Please refer to the hazedumper signatures if you need to do that.<br>https://github.com/frk1/hazedumper/blob/master/config.json
+
 ### How to Navigate
 
 1. Menukey: Insert
@@ -66,20 +77,6 @@ Go play on our cloud connected Hack versus Hack ranked network and gather statis
 Kills, Headhots, Wallbangs, No scopes, Shots, Hits, Lethality and many more game events are monitored to create beautiful curves.<br>
 Login using Steam and get access to your profile to see even more details about yourself and become part of "EUROPES MOST WANTED".<br>
 <strong>Join the Madness</strong>.
-
-
-# Dev Shit
-
-## Updating Offsets
-~~Inside GenericObjects folder you can find the "equivalent" file for updating the offsets.<br>
-The only one you really need to update is the <strong>dwGetAllClasses</strong> offset since the signature scanner cant find it.<br>~~
-A couple of offsets can be found inside various components. Most prevailant in SkillModNeon.cs
-<br>
-
-## Updating Signatures
-All necessary signatures are included and the hack should work until the next signature breaking update.<br>
-If a signature breaks you can update the ./configs/signatures.json file or update the sigs inside the Generators.cs and delete the signatures.json. <br>
-Please refer to the hazedumper signatures if you need to do that.<br>https://github.com/frk1/hazedumper/blob/master/config.json
 
 
 ## tl:dr
