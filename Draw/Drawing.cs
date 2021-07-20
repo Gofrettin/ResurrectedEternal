@@ -1,4 +1,5 @@
 ﻿using System;
+using System.Collections.Concurrent;
 using System.Collections.Generic;
 using SharpDX;
 using SharpDX.Direct2D1;
@@ -27,7 +28,7 @@ namespace RRFull.Draw
         public int FontSize => (int)g_Globals.Config.VisualConfig.FontSize.Value;
 
         private FontAndColorManager FontAndColorManager;
-
+        private ConcurrentDictionary<string, RectangleF> m_cdFontCache = new ConcurrentDictionary<string, RectangleF>();
         public Drawing(IntPtr DeviceHandle, System.Drawing.Rectangle _rect)
         {
 
@@ -385,12 +386,12 @@ namespace RRFull.Draw
         {
             return MeasureString(text, float.MaxValue, float.MaxValue, fontSize);
         }
-        private Dictionary<string, RectangleF> _smallCache = new Dictionary<string, RectangleF>();
+        
 
         public SharpDX.RectangleF MeasureString(string text, float maxWidth, float maxHeight, int fontSize)
         {
-            if (_smallCache.ContainsKey(text + fontSize))
-                return _smallCache[text + fontSize];
+            if (m_cdFontCache.ContainsKey(text + fontSize))
+                return m_cdFontCache[text + fontSize];
 
             //create a textlayout dictionary to cache already measured strings.
             //Remember to clear the dictioanry if the font size changes
@@ -399,7 +400,7 @@ namespace RRFull.Draw
             {
                 rect = new SharpDX.RectangleF(0, 0, layout.Metrics.Width + .5f, layout.Metrics.Height + .5f);
             }
-            _smallCache.Add(text + fontSize, rect);
+            m_cdFontCache.TryAdd(text + fontSize, rect);
             return rect;
         }
 

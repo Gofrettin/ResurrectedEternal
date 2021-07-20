@@ -426,8 +426,7 @@ namespace RRFull.Configs.GamePlayConfig
         };
         public ConfigValueEntry SoundQuake = new ConfigValueEntry
         {
-            Header = "Quakesounds",
-            Name = "Enable",
+            Name = "Quakesounds",
             Value = true,
             //ValueType = typeof(KNIFEINDEX),
             IsGrouped = true,

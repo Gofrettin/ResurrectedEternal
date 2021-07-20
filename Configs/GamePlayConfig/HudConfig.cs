@@ -99,6 +99,11 @@ namespace ResurrectedEternal.Configs.GamePlayConfig
             Name = "Enable",
             ConvarName = "cl_draw_only_deathnotices"
         };
+        public ConfigValueEntry bDrawFov = new ConfigValueEntry()
+        {
+            Value = false,
+            Name = "Draw Fov",
+        };
         public ConfigValueEntry FOVChanger = new ConfigValueEntry
         {
             Header = "Field of View Control",

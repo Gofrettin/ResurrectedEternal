@@ -12,7 +12,8 @@ namespace RRFull.Skills
     class SkillModVisible : SkillMod
     {
         private DateTime _lastUpdate = DateTime.Now;
-        private TimeSpan _interval = TimeSpan.FromMilliseconds(8);
+        //no need to go hard on visual checks for the esp since the aimbot already does heavy checks
+        private TimeSpan _interval = TimeSpan.FromMilliseconds(20);
 
         private MapManager MapManager;
 
@@ -36,7 +37,16 @@ namespace RRFull.Skills
             if (DateTime.Now - _lastUpdate < _interval)
                 return;
 
+            CheckPlayers();
+            CheckFlashProjectiles();
+            CheckNuggets();
 
+            _lastUpdate = DateTime.Now;
+
+        }
+
+        private void CheckPlayers()
+        {
             foreach (var item in Filter.GetActivePlayers((TargetType)Config.VisualConfig.Type.Value))
             {
                 if (item.m_bIsActive)
@@ -49,7 +59,10 @@ namespace RRFull.Skills
                 else
                     item.IsVisible = false;
             }
+        }
 
+        private void CheckFlashProjectiles()
+        {
             if ((bool)Config.VisualConfig.FlashWarning.Value)
             {
                 //var _flashes = .Where(x => Generators.IsFlashbang(x.m_szModelName));
@@ -59,9 +72,9 @@ namespace RRFull.Skills
                     if (!Generators.IsFlashbang(item.m_szModelName)) continue;
                     if (item.IsValid)
                     {
-                        //if ((VisibleCheck)Config.OtherConfig.VisibleCheckOption.Value == global::VisibleCheck.RayTrace && MapManager.VisibleCheckAvailable)
-                        //    item.IsVisible = VisibleCheck(Client.LocalPlayer.m_vecHead, item.m_vecOrigin);
-                        //else
+                        if ((VisibleCheck)Config.OtherConfig.VisibleCheckOption.Value == global::VisibleCheck.RayTrace && MapManager.VisibleCheckAvailable)
+                            item.IsVisible = VisibleCheck(Client.LocalPlayer.m_vecHead, item.m_vecOrigin);
+                        else
                             item.IsVisible = VisibleByMask(item);
                     }
                     else
@@ -69,24 +82,25 @@ namespace RRFull.Skills
                 }
 
             }
+        }
 
+        private void CheckNuggets()
+        {
             if ((bool)Config.AimbotConfig.ChickenAimbot.Value)
             {
                 foreach (var item in Client.GetChicks())
                 {
                     if (!item.m_bIsActive)
                     {
-                        //if ((VisibleCheck)Config.OtherConfig.VisibleCheckOption.Value == global::VisibleCheck.RayTrace && MapManager.VisibleCheckAvailable)
-                        //    item.Visible = VisibleCheck(Client.LocalPlayer.m_vecHead, item.Head);
-                        //else
+                        if ((VisibleCheck)Config.OtherConfig.VisibleCheckOption.Value == global::VisibleCheck.RayTrace && MapManager.VisibleCheckAvailable)
+                            item.Visible = VisibleCheck(Client.LocalPlayer.m_vecHead, item.Head);
+                        else
                             item.Visible = VisibleByMask(item);
                     }
                     else
                         item.Visible = false;
                 }
             }
-            _lastUpdate = DateTime.Now;
-
         }
 
 

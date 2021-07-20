@@ -254,7 +254,6 @@ namespace RRFull.Skills.EnvironmentSkillMods
         }
 
         private CascadeLight m_dwLight;
-        private bool _HasDefaultValues = false;
         private void LightControl()
         {
             if (!(bool)Config.EnvironmentConfig.OverrideCascade.Value)
@@ -351,7 +350,6 @@ namespace RRFull.Skills.EnvironmentSkillMods
         }
 
         private TonemapController m_dwTonemapper;
-        private bool _toneMapperDefault = false;
         private void TonemapControl()
         {
             var _result = Client.GetEntityByClass(ClientClass.CEnvTonemapController);

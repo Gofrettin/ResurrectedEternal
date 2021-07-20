@@ -64,26 +64,24 @@ namespace RRFull.Skills
         float _maxAngle = 180.0f;
         private Vector2 _screenCenter;
 
+        private bool m_bDrawFov => (bool)g_Globals.Config.HudConfig.bDrawFov.Value;
+
         //›‹ ﴾﴿
         string selector = "› ";
         string subSelector = " ‹";
 
         public SkillModDrawing(Engine engine, Client client) : base(engine, client)
         {
-            _renderObject = Skills.Factory.OverlayFactory.CreateRenderForm(Memory.MemoryLoader.instance.GetWindowRect());
+            _renderObject = OverlayFactory.CreateRenderForm(Memory.MemoryLoader.instance.GetWindowRect());
             _renderObject.OnLoad += _renderObject_OnLoad;
             _renderObject.Run();
 
             _Menu = new Menu.Menu(Config);
             PushClipManager = new PushClipManager();
 
-            EventManager.OnPlayerChanged += EventManager_OnPlayerChanged;
-            EventManager.MenuStateChanged += EventManager_MenuStateChanged;
-            EventManager.WindowStateChanged += EventManager_WindowStateChanged;
-            //Client.OnPlayerConnected += Client_OnPlayerConnected;
-            //Client.OnPlayerDisconnected += Client_OnPlayerDisconnected;
-            //Client.OnPushClip += Client_OnPushClip;
-            //rndform.Run();
+            OnPlayerChanged += EventManager_OnPlayerChanged;
+            MenuStateChanged += EventManager_MenuStateChanged;
+            WindowStateChanged += EventManager_WindowStateChanged;
         }
 
         private void EventManager_WindowStateChanged(WindowState obj)
@@ -217,7 +215,7 @@ namespace RRFull.Skills
                 name = Client.LocalPlayer.BaseAddress.ToString("X");
             else
                 name = "FFFFFFFF";
-            PlayerInfo = "Hello0o0 [" + g_Globals.Nickname + "]~ hell broke loose on 0x" + name + "\nInsert brings up the menu =) averaging on " + Henker.Singleton._currentFPS + "fps";
+            PlayerInfo = "Hello0o0 [" + g_Globals.Nickname + "]~ hell broke loose on 0x" + name + "\nInsert brings up the menu =) averaging on " + Henker.Singleton.m_lCurrentFPS + "fps";
 
 
             Drawing.DrawText(PlayerInfo, SharpDX.Color.White, _oneQuart, "Calibri", 15);
@@ -410,6 +408,8 @@ namespace RRFull.Skills
 
         private void DrawFov()
         {
+            if (!m_bDrawFov)
+                return;
             //if (_screenCenter == Vector2.Zero)
             var _fovOffset = new Vector2(Drawing.Size.Width / 2, Drawing.Size.Height / 2);
 

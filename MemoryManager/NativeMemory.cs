@@ -459,7 +459,7 @@ namespace RedRain
             _offsetPattern = null;
             return 0;
         }
-        
+
 
         /// <summary>
         /// what a brainmelt this is, first add pattern then read pointer, dereference twice, go home 
@@ -469,7 +469,7 @@ namespace RedRain
         /// <param name="patternAddition"></param>
         /// <param name="addressOffset"></param>
         /// <returns></returns>
-        public int GetAllClasses(string pattern, ScanFlags flags, int[] patternAddition, int addressOffset)
+        public int FindOffset(string pattern, ScanFlags flags, int[] patternAddition, int addressOffset)
         {
             _offsetPattern = pattern.Split(' ');
             for (int x = 0; x < m_moduleBuffer.Length; x++)
@@ -482,7 +482,8 @@ namespace RedRain
                         //add pattern addition
                         address += patternAddition[i];
                         //might want to check if position is accurate
-                        address = Read<int>((IntPtr)address);
+                        if (flags.HasFlag(ScanFlags.READ))
+                            address = Read<int>((IntPtr)address);
 
                     }
                     if (flags.HasFlag(ScanFlags.SUBSTRACT_BASE))

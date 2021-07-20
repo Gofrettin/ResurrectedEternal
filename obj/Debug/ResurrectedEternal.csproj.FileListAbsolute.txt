@@ -1,0 +1,8 @@
+C:\rrgit\ResurrectedEternal\obj\Debug\ResurrectedEternal.csproj.CoreCompileInputs.cache
+C:\rrgit\ResurrectedEternal\obj\Debug\ResurrectedEternal.exe
+C:\rrgit\ResurrectedEternal\obj\Debug\ResurrectedEternal.pdb
+C:\rrgit\build\ResurrectedEternal.exe.config
+C:\rrgit\build\ResurrectedEternal.exe
+C:\rrgit\build\ResurrectedEternal.pdb
+C:\rrgit\ResurrectedEternal\obj\Debug\ResurrectedEternal.csproj.Fody.CopyLocal.cache
+C:\rrgit\ResurrectedEternal\obj\Debug\ResurrectedEternal.csproj.CopyComplete

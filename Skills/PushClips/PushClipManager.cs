@@ -19,9 +19,10 @@ namespace RRFull.Skills.PushClips
         {
             get
             {
+                
                 return _c;
-                var percentage = (int)((ExpireTime.Ticks * 100d) / DateTime.Now.Ticks);
-                return new Color(_c.R, _c.G, _c.B, _c.A * percentage);
+                var percentage = (float)(DateTime.Now.Ticks / ExpireTime.Ticks);
+                return new Color(_c.R, _c.G, _c.B, EngineMath.Clamp(_c.A * (byte)percentage, 0, 255));
             }
             private set { _c = value; }
         }
