@@ -4,6 +4,7 @@
 <p align="center">
   <img width="100%" height="480" src="https://www.hvhc.eu/assets/flex/add/csgo_9.jpg">
 </p>
+As seen on  <a href="https://www.unknowncheats.me/forum/cs-go-releases/461232-resurrected-eternal-v3.html">UNKNOWNCHEATS</a> // ELITEPVPERS
 
 # Summary
 External Counter-Strike: Global Offensive Multihack.<br>
