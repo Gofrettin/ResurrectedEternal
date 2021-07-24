@@ -7,7 +7,7 @@
 As seen on  <a href="https://www.unknowncheats.me/forum/cs-go-releases/461232-resurrected-eternal-v3.html">UNKNOWNCHEATS</a> // ELITEPVPERS
 
 # Summary
-External Counter-Strike: Global Offensive Multihack.<br>
+External Counter-Strike: Global Offensive Multihack.<a href="https://github.com/sirk1x/ResurrectedEternalLite">Lite Version</a><br>
 
 Featuring 
 1. Aimbot
