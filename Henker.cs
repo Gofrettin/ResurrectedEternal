@@ -65,12 +65,12 @@ namespace RRFull
 
         private void CurrentDomain_UnhandledException(object sender, UnhandledExceptionEventArgs e)
         {
-           Console.WriteLine(e.ToString());
+           //Console.WriteLine(e.ToString());
         }
 
         private void CurrentDomain_FirstChanceException(object sender, FirstChanceExceptionEventArgs e)
         {
-            Console.WriteLine(e.Exception.ToString());
+            //Console.WriteLine(e.Exception.ToString());
         }
 
         private Modus previousMode;
