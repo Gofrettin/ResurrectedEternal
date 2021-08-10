@@ -19,9 +19,8 @@ Including
 1. Netvardumper
 2. Modular Signature Scanner (support for hazedumper signatures)
 3. Dynamic Menu drawing by config components
-4. Model Precache Table
-5. Precached Console Variables and Commands
-6. Reflective Engine Copy inside Memory
+4. Precached Console Variables and Commands
+5. Reflective Engine Copy inside Memory
 
 <br>
 <a href="https://rrcheats.eu/page/features">Compiled list of (mostly) all Features here.</a><br><br>
