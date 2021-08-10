@@ -1,10 +1,6 @@
 <h2> Resurrected Eternal (V3)</h2>
-<a href="https://rrcheats.eu">RRCHEATS.EU</a> // <a href="https://HVHC.eu">HVHC.EU</a> // <a href="https://FOREVERWARE.gay">FOREVERWARE.GAY</a> // <a href="https://FOREVERWARE.cc">FOREVERWARE.CC</a> // <a href="https://RESURRECTED.cc">RESURRECTED.CC</a>
+<a href="https://rrcheats.eu">RRCHEATS.EU</a> // <a href="https://FOREVERWARE.gay">FOREVERWARE.GAY</a> // <a href="https://FOREVERWARE.cc">FOREVERWARE.CC</a> // <a href="https://RESURRECTED.cc">RESURRECTED.CC</a>
 <br>
-<p align="center">
-  <img width="480" height="480" src="https://www.rrcheats.eu/assets/product.png">
-</p>
-As seen on  <a href="https://www.unknowncheats.me/forum/cs-go-releases/461232-resurrected-eternal-v3.html">UNKNOWNCHEATS</a> // ELITEPVPERS
 
 # Summary
 External Counter-Strike: Global Offensive Multihack.<a href="https://github.com/sirk1x/ResurrectedEternalLite">Lite Version</a><br>
@@ -30,10 +26,6 @@ Including
 <br>
 <a href="https://rrcheats.eu/page/features">Compiled list of (mostly) all Features here.</a><br><br>
 <br>
-Visit the project page for the addons or to download a <strong>VAC Proof</strong> compiled hack handcrafted by our artificial intelligence cloud network to keep you safe at all times.<br>
-
-Uses Fody Weavers to compile single executable.
-
 
 # Instructions
 
@@ -74,10 +66,7 @@ Please refer to the hazedumper signatures if you need to do that.<br>https://git
 
 # PROJECT: HvHARDCORE /// LAST MAN STANDING
 
-Go play on our cloud connected Hack versus Hack ranked network and gather statistics about yourself and others.<br>
-Kills, Headhots, Wallbangs, No scopes, Shots, Hits, Lethality and many more game events are monitored to create beautiful curves.<br>
-Login using Steam and get access to your profile to see even more details about yourself and become part of "EUROPES MOST WANTED".<br>
-<strong>Join the Madness</strong>.
+<a href="https://HVHC.eu">HVHC.EU</a> // GO HARD, GO HOME.
 
 
 ## tl:dr
