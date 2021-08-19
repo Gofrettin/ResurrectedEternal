@@ -17,7 +17,7 @@ Featuring
 
 Including
 1. Netvardumper
-2. Modular Signature Scanner (support for hazedumper signatures)
+2. Modular Signature Scanner
 3. Dynamic Menu drawing by config components
 4. Precached Console Variables and Commands
 5. Reflective Engine Copy inside Memory
@@ -55,8 +55,6 @@ Dangerzone AimAt/NeonAt must be set to All to work.<br>
 3. Console -> Type !help to get a overview of all available commands.
 
 ### Updating Offsets
-~~Inside GenericObjects folder you can find the "equivalent" file for updating the offsets.<br>
-The only one you really need to update is the <strong>dwGetAllClasses</strong> offset since the signature scanner cant find it.<br>~~
 A couple of offsets can be found inside various components. Most prevailant in SkillModNeon.cs
 <br>
 
