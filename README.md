@@ -21,7 +21,10 @@ Including
 3. Dynamic Menu drawing by config components
 4. Precached Console Variables and Commands
 5. Reflective Engine Copy inside Memory
-
+<br>
+Download the <a href="https://www.resurrected.cc/maps.zip">Maps</a> for perfect visual check if available.<br>
+Dangerzone AimAt/NeonAt must be set to All to work.<br>
+<br>
 <br>
 <a href="https://rrcheats.eu/page/features">Compiled list of (mostly) all Features here.</a><br><br>
 <br>
