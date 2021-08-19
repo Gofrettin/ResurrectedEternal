@@ -5,7 +5,7 @@ using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
 
-namespace RRFull.Objects
+namespace ResurrectedEternal.Objects
 {
     class GenericQueue<T>
     {

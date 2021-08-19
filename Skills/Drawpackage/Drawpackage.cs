@@ -1,6 +1,7 @@
-﻿using RRFull.BaseObjects;
-using RRFull.ClientObjects;
-using RRFull.Objects;
+﻿using ResurrectedEternal.BaseObjects;
+using ResurrectedEternal.ClientObjects;
+using ResurrectedEternal.Objects;
+using RRFull;
 using SharpDX;
 using System;
 using System.Collections.Generic;
@@ -8,7 +9,7 @@ using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
 
-namespace RRFull.Skills.Drawpackage
+namespace ResurrectedEternal.Skills.Drawpackage
 {
     public enum RectType
     {

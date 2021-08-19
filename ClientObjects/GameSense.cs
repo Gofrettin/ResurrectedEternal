@@ -1,13 +1,13 @@
-﻿using RRFull.BaseObjects;
-using RRFull.Events.EventArgs;
-using RRFull.Memory;
+﻿using ResurrectedEternal.BaseObjects;
+using ResurrectedEternal.Events.EventArgs;
+using ResurrectedEternal.Memory;
 using System;
 using System.Collections.Generic;
 using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
 
-namespace RRFull.ClientObjects
+namespace ResurrectedEternal.ClientObjects
 {
     public enum CurrentWarmupState
     {

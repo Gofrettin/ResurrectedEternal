@@ -1,4 +1,5 @@
-﻿using RRFull.Draw;
+﻿using ResurrectedEternal.Draw;
+using RRFull;
 using RRWAPI;
 using System;
 using System.Collections.Generic;
@@ -8,7 +9,7 @@ using System.Text;
 using System.Threading;
 using System.Threading.Tasks;
 using System.Windows.Forms;
-namespace RRFull.Skills.Factory
+namespace ResurrectedEternal.Skills.Factory
 {
 
 
@@ -101,7 +102,7 @@ namespace RRFull.Skills.Factory
 
         private bool m_bIsDisabled = true;
 
-        //private Cursor _Cursor = Generators.LoadCursorFromResource(RRFull.Properties.Resources.fuck);
+        //private Cursor _Cursor = Generators.LoadCursorFromResource(ResurrectedEternal.Properties.Resources.fuck);
 
         public void DisableClickThrough()
         {
@@ -114,12 +115,6 @@ namespace RRFull.Skills.Factory
              (IntPtr)DefaultState
              );
             WAPI.SetForegroundWindow(m_dwHandle);
-            //if (this.InvokeRequired)
-            //    this.Invoke((MethodInvoker)delegate
-            //    {
-            //        this.Cursor = _Cursor;
-            //    });
-            // User32.SetForegroundWindow(GetHandle());
         }
 
         public void EnableClickThrough()

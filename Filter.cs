@@ -1,12 +1,10 @@
-﻿using RRFull.BaseObjects;
-using RRFull.ClientObjects;
-using System;
+﻿using ResurrectedEternal.BaseObjects;
+using ResurrectedEternal.ClientObjects;
+using RRFull;
 using System.Collections.Generic;
 using System.Linq;
-using System.Text;
-using System.Threading.Tasks;
 
-namespace RRFull
+namespace ResurrectedEternal
 {
     public static class Filter
     {

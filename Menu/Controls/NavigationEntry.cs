@@ -5,12 +5,12 @@ using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
 
-namespace RRFull.Menu.Controls
+namespace ResurrectedEternal.Menu.Controls
 {
     public class NavigationEntry
     {
 
-        //private System.Windows.Forms.Cursor CustomCursor = Generators.LoadCursorFromResource(RRFull.Properties.Resources.fuck);
+        //private System.Windows.Forms.Cursor CustomCursor = Generators.LoadCursorFromResource(ResurrectedEternal.Properties.Resources.fuck);
         private Color _activeColor = Color.Cyan;
         private Color _inactiveColor = Color.DeepSkyBlue;
         private Color _onClickColor = Color.Crimson;

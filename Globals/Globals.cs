@@ -1,7 +1,7 @@
 ﻿using ResurrectedEternal.Globals;
 using RRFull;
-using RRFull.Configs.ConfigSystem;
-using RRFull.GenericObjects;
+using ResurrectedEternal.Configs.ConfigSystem;
+using ResurrectedEternal.GenericObjects;
 using System;
 using System.Collections.Generic;
 using System.IO;
@@ -9,10 +9,7 @@ using System.Linq;
 using System.Reflection;
 using System.Text;
 using System.Threading.Tasks;
-
-
-
-
+using ResurrectedEternal;
 
 public static class g_Globals
 {

@@ -1,7 +1,7 @@
-﻿using RRFull.Configs.ConfigSystem;
-using RRFull.Memory;
-using RRFull.MemoryManager.PatMod;
-using RRFull.Params.CSHelper;
+﻿using ResurrectedEternal.Configs.ConfigSystem;
+using ResurrectedEternal.Memory;
+using ResurrectedEternal.MemoryManager.PatMod;
+using ResurrectedEternal.Params.CSHelper;
 using System;
 using System.Collections.Generic;
 using System.Linq;

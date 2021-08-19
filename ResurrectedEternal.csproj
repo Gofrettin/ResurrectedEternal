@@ -344,6 +344,7 @@
     <Compile Include="Henker.cs" />
     <Compile Include="Logging\ILog.cs" />
     <Compile Include="MemoryManager\NetVarManager.cs" />
+    <Compile Include="Skills\GamePlaySkillMods\AimExtension\AccuracyPenalty.cs" />
     <Compile Include="TheStage.cs" />
     <Compile Include="Memes\Meme.cs" />
     <Compile Include="MemoryManager\AllocatedMemory.cs" />

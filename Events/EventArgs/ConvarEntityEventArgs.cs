@@ -1,12 +1,12 @@
 ﻿using Newtonsoft.Json;
-using RRFull.ClientObjects.Cvars;
+using ResurrectedEternal.ClientObjects.Cvars;
 using System;
 using System.Collections.Generic;
 using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
 
-namespace RRFull.Events.EventArgs
+namespace ResurrectedEternal.Events.EventArgs
 {
     public class ConvarEntityEventArgs
     {

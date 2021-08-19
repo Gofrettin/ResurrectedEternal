@@ -4,7 +4,7 @@ using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
 
-namespace RRFull.Params.CSHelper
+namespace ResurrectedEternal.Params.CSHelper
 {
     public static class ConsoleHelper
     {

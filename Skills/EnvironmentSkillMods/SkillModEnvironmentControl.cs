@@ -1,15 +1,15 @@
 ﻿using Newtonsoft.Json;
-using RRFull.BaseObjects;
-using RRFull.ClientObjects;
-using RRFull.ClientObjects.Cvars;
-using RRFull.GenericObjects;
+using ResurrectedEternal.BaseObjects;
+using ResurrectedEternal.ClientObjects;
+using ResurrectedEternal.ClientObjects.Cvars;
+using ResurrectedEternal.GenericObjects;
 using System;
 using System.Collections.Generic;
 using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
 
-namespace RRFull.Skills.EnvironmentSkillMods
+namespace ResurrectedEternal.Skills.EnvironmentSkillMods
 {
     class SkillModEnvironmentControl : SkillMod
     {

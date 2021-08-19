@@ -2,32 +2,7 @@ using System;
 using System.Runtime.InteropServices;
 
 
-//[StructLayout(LayoutKind.Explicit, Pack = 1)]
-//public struct C_SunGlowOverly
-//{
-//    [FieldOffset(0x04)]
-//    public SharpDX.Vector3 m_vecOrigin;
 
-//    [FieldOffset(0x10)]
-//    [MarshalAs(UnmanagedType.U1, SizeConst = 1)]
-//    public bool m_bDirectional;
-
-//    [FieldOffset(0x14)]
-//    public SharpDX.Vector3 m_vecDirection;
-
-//    [FieldOffset(0x24)]
-//    [MarshalAs(UnmanagedType.U1, SizeConst = 1)]
-//    public bool m_bSkyObstructionScale;
-
-//    [FieldOffset(0x30)]
-//    [MarshalAs(UnmanagedType.ByValArray, SizeConst = 4)]
-//    public CGlowSprite[] m_glowSprites;
-
-//    [FieldOffset(0x90)]
-//    [MarshalAs(UnmanagedType.U1, SizeConst = 1)]
-//    public byte m_nSprites;
-
-//}
 [StructLayout(LayoutKind.Sequential, Pack = 1)]
 struct CEntInfo
 {
@@ -38,38 +13,7 @@ struct CEntInfo
     public IntPtr m_pNext;
     #endregion
 }
-//public struct CGlowSprite
-//{
-//    public SharpDX.Vector3 RGB;
-//    public float m_flHorzSize;
-//    public float m_flVertSize;
-//    public IntPtr m_pMaterialSystem;
-//}
 
-//[StructLayout(LayoutKind.Explicit)]
-//public unsafe struct CInput
-//{
-//    [FieldOffset(0)] public int pvftable;
-//    [FieldOffset(12)] public byte m_fTrackIRAvailable;
-//    [FieldOffset(13)] public byte m_fMouseInitialized;
-//    [FieldOffset(14)] public byte m_fMouseActive;
-//    [FieldOffset(15)] public byte m_fJoystickAdvancedInit;
-//    [FieldOffset(60)] public void* m_pKeys;
-//    [FieldOffset(172)] public byte m_fCameraInterceptingMouse;
-//    [FieldOffset(173)] public byte m_fCameraInThirdPerson;
-//    [FieldOffset(174)] public byte m_fCameraMovingWithMouse;
-//    [FieldOffset(175)] public byte m_fCameraDistanceMove;
-//    [FieldOffset(176)] public SharpDX.Vector3 m_vecCameraOffset;
-//    [FieldOffset(188)] public int m_nCameraOldX;
-//    [FieldOffset(192)] public int m_nCameraOldY;
-//    [FieldOffset(196)] public int m_nCameraX;
-//    [FieldOffset(200)] public int m_nCameraY;
-//    [FieldOffset(204)] public byte m_CameraIsOrthographic;
-//    [FieldOffset(236)] public float m_flLastForwardMove;
-//    [FieldOffset(240)] public int m_nClearInputState;
-//    [FieldOffset(244)] public CUserCmd m_pCommands;
-//    [FieldOffset(248)] public VerifiedUserCMD m_pVerifiedCommands;
-//}
 struct _CColor
 {
     public byte R;
@@ -77,32 +21,7 @@ struct _CColor
     public byte B;
     public byte A;
 }
-//public struct VerifiedUserCMD
-//{
-//    public CUserCmd m_cmd;
-//    public UInt32 m_crc;
-//};
 
-//[StructLayout(LayoutKind.Explicit)]
-//public unsafe struct CUserCmd
-//{
-//    [FieldOffset(0x00)] public int pvftable;
-//    [FieldOffset(0x04)] public int m_iCmdNumber;
-//    [FieldOffset(0x08)] public int m_iTickCount;
-//    [FieldOffset(0x0C)] public SharpDX.Vector3 m_vecViewAngles;
-//    [FieldOffset(0x24)] public float m_flForwardmove;
-//    [FieldOffset(0x28)] public float m_flSidemove;
-//    [FieldOffset(0x2C)] public float m_flUpmove;
-//    [FieldOffset(0x30)] public int m_iButtons;
-//    [FieldOffset(0x34)] public char m_bImpulse;
-//    [FieldOffset(0x38)] public int m_iWeaponSelect;
-//    [FieldOffset(0x3C)] public int m_iWeaponSubtype;
-//    [FieldOffset(0x40)] public int m_iRandomSeed;
-//    [FieldOffset(0x44)] public short m_siMouseDx;
-//    [FieldOffset(0x46)] public short m_siMouseDy;
-//    [FieldOffset(0x48)] public byte m_bHasBeenPredicted;
-//    [FieldOffset(0x4C)] public fixed byte pad[0x18];
-//}
 
 [StructLayout(LayoutKind.Explicit)]
 public struct ClientClass_t
@@ -299,14 +218,7 @@ public struct CGlobalVarsBase
     [FieldOffset(0x2C)]
     public int network_protocol;
 
-    //  [FieldOffset(0x24)]
-    //0x30	void* pSaveData;
-    //[FieldOffset(0x34)]
-    //public bool m_bClient;
-    //[FieldOffset(0x38)]
-    //public int nTimestampNetworkingBase;
-    //[FieldOffset(0x3C)]
-    //public int nTimestampRandomizeWindow;
+
 }
 
 
@@ -332,12 +244,7 @@ struct m_dwGlowObject
     public float m_flGlowAlphaFunctionOfMaxVelocity; //0x0010
     [FieldOffset(0x20)]
     public float m_flGlowAlphaMax; //0x0010
-    //[FieldOffset(0x20)]
-    ///public float m_flGlowPulseOverdrive; //0x0010
 
-    //[FieldOffset(0x14)]
-    //[MarshalAs(UnmanagedType.ByValArray, SizeConst = 16)]
-    //public byte[] unkA; //0x0014 -> 0x20 JUNK
 
     [FieldOffset(0x28)]
     public bool bRenderWhenOccluded; //0x0024
@@ -353,48 +260,6 @@ struct m_dwGlowObject
     public byte m_nRenderStyle; //0x002C
 }
 
-//[StructLayout(LayoutKind.Explicit)]
-//struct m_dwGlowObject
-//{
-//    [FieldOffset(0x04)]
-//    public IntPtr dwEntity; //0x0000
-
-//    [FieldOffset(0x08)]
-//    public float R; //0x0004
-
-//    [FieldOffset(0x0C)]
-//    public float G; //0x0008
-
-//    [FieldOffset(0x10)]
-//    public float B; //0x000C
-
-//    [FieldOffset(0x14)]
-//    public float A; //0x0010
-
-//    [FieldOffset(0x1C)]
-//    public float m_flGlowAlphaFunctionOfMaxVelocity; //0x0010
-//    [FieldOffset(0x20)]
-//    public float m_flGlowAlphaMax; //0x0010
-//    //[FieldOffset(0x20)]
-//    ///public float m_flGlowPulseOverdrive; //0x0010
-
-//    //[FieldOffset(0x14)]
-//    //[MarshalAs(UnmanagedType.ByValArray, SizeConst = 16)]
-//    //public byte[] unkA; //0x0014 -> 0x20 JUNK
-
-//    [FieldOffset(0x28)]
-//    public bool bRenderWhenOccluded; //0x0024
-
-//    [FieldOffset(0x29)]
-//    public bool bRenderWhenUnoccluded; //0x0025
-
-//    [FieldOffset(0x2A)]
-//    public bool bFullBloom; //0x0026
-
-
-//    [FieldOffset(0x30)]
-//    public byte m_nRenderStyle; //0x002C
-//}
 
 
 [StructLayout(LayoutKind.Explicit)]
@@ -526,36 +391,6 @@ public struct glowObjectDefinition_t
     public byte[] junk1;
 }
 
-//[StructLayout(LayoutKind.Explicit)]
-//public struct CENVTONEMAPPER
-//{
-//    [FieldOffset(0x09D8)]
-//    public bool m_bUseCustomAutoExposureMin;
-//    [FieldOffset(0x09D9)]
-//    public bool m_bUseCustomAutoExposureMax;
-//    [FieldOffset(0x09DA)]
-//    public bool m_bUseCustomBloomScale;
-//    [FieldOffset(0x09DC)]
-//    public float m_flCustomAutoExposureMin;
-//    [FieldOffset(0x09E0)]
-//    public float m_flCustomAutoExposureMax;
-//    [FieldOffset(0x09E4)]
-//    public float m_flCustomBloomScale;
-//    [FieldOffset(0x09E8)]
-//    public float m_flCustomBloomScaleMinimum;
-//    [FieldOffset(0x09EC)]
-//    public float m_flBloomExponent;
-//    [FieldOffset(0x09F0)]
-//    public float m_flBloomSaturation;
-//    [FieldOffset(0x09F4)]
-//    public float m_flTonemapPercentTarget;
-//    [FieldOffset(0x09F8)]
-//    public float m_flTonemapPercentBrightPixels;
-//    [FieldOffset(0x09FC)]
-//    public float m_flTonemapMinAvgLum;
-//    [FieldOffset(0x0A00)]
-//    public float m_flTonemapRate;
-//}
 [StructLayout(LayoutKind.Sequential)]
 public struct view_matrix_t
 {
@@ -594,34 +429,6 @@ public struct view_matrix_t
     #endregion
 }
 
-//[StructLayout(LayoutKind.Explicit)]
-//struct CPostProcessController
-//{
-//    [FieldOffset(0x9D8)]
-//    public float fadetime; //0x0000
-//    [FieldOffset(0x9DC)]
-//    public float localcontrast; //0x0004
-//    [FieldOffset(0x9D0)]
-//    public float localcontrastedstrength; //0x0008
-//    [FieldOffset(0x9E4)]
-//    public float vignettestart; //0x000C
-//    [FieldOffset(0x9E8)]
-//    public float vignetteend; //0x0010
-//    [FieldOffset(0x9EC)]
-//    public float vignetteblurstrength; //0x0014
-//    [FieldOffset(0x9F0)]
-//    public float fadetoblackstrength; //0x0018
-//    [FieldOffset(0x9F4)]
-//    public float depthblurfocalstrength; //0x001C
-//    [FieldOffset(0x9F8)]
-//    public float depthblurfocaldistance; //0x0020
-//    [FieldOffset(0x9FC)]
-//    public float depthblurstrength; //0x0024
-//    [FieldOffset(0xA00)]
-//    public float screenblurstrength; //0x0028
-//    [FieldOffset(0xA04)]
-//    public float filmgrainstrength; //0x002C
-//}
 
 [StructLayout(LayoutKind.Explicit)]
 public struct localsound
@@ -662,34 +469,6 @@ public struct player_info_s
     public char m_FilesDownloaded;
 }
 
-//[StructLayout(LayoutKind.Sequential, Pack = 1)]
-//public struct ConVar_struct
-//{
-//    [MarshalAs(UnmanagedType.ByValArray, SizeConst = 4)]
-//    public char[] pad_0x0000; //0x0000
-//    public IntPtr pNext; //0x0004 
-//    public int bRegistered; //0x0008 
-//    [MarshalAs(UnmanagedType.ByValArray, SizeConst = 128)]
-//    public char[] m_pszName;
-//    [MarshalAs(UnmanagedType.ByValArray, SizeConst = 255)]
-//    public char[] m_pszHelpString; //0x0010 
-//    public int nFlags; //0x0014 
-//    [MarshalAs(UnmanagedType.ByValArray, SizeConst = 4)]
-//    public char[] pad_0x0018; //0x0018
-//    public IntPtr pParent; //0x001C 
-//    [MarshalAs(UnmanagedType.ByValArray, SizeConst = 128)]
-//    public char[] pszDefaultValue; //0x0020 
-//    [MarshalAs(UnmanagedType.ByValArray, SizeConst = 128)]
-//    public char[] strString; //0x0024 
-//    public int StringLength; //0x0028 
-//    public float fValue; //0x002C 
-//    public int nValue; //0x0030 
-//    public int bHasMin; //0x0034 
-//    public float fMinVal; //0x0038 
-//    public int bHasMax; //0x003C 
-//    public float fMaxVal; //0x0040 
-//    public IntPtr fnChangeCallback; //0x0044
-//}
 [StructLayout(LayoutKind.Sequential, Pack = 1)]
 public struct mstudiobbox_t
 {

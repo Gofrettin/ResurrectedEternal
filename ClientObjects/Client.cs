@@ -1,16 +1,16 @@
-﻿using RRFull.BaseObjects;
-using RRFull.BaseObjects.Fire;
-using RRFull.ClientObjects.Cvars;
-using RRFull.ClientObjects.ThreadUpdate;
-using RRFull.Events;
-using RRFull.Events.EventArgs;
-using RRFull.Memory;
+﻿using ResurrectedEternal.BaseObjects;
+using ResurrectedEternal.BaseObjects.Fire;
+using ResurrectedEternal.ClientObjects.Cvars;
+using ResurrectedEternal.ClientObjects.ThreadUpdate;
+using ResurrectedEternal.Events;
+using ResurrectedEternal.Events.EventArgs;
+using ResurrectedEternal.Memory;
 using System;
 using System.Collections.Generic;
 using System.Linq;
 using System.Threading.Tasks;
 
-namespace RRFull.ClientObjects
+namespace ResurrectedEternal.ClientObjects
 {
 
     class Client : ClientObject

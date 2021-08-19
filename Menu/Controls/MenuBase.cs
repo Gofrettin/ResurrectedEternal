@@ -5,7 +5,7 @@ using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
 
-namespace RRFull.Menu.Controls
+namespace ResurrectedEternal.Menu.Controls
 {
     public class MenuBase : Navigation
     {

@@ -1,11 +1,11 @@
-﻿using RRFull.ClientObjects;
-using RRFull.Configs;
-using RRFull.Events;
-using RRFull.Events.EventArgs;
-using RRFull.GenericObjects;
-using RRFull.Params;
-using RRFull.Params.CSHelper;
-using RRFull.Skills;
+﻿using ResurrectedEternal.ClientObjects;
+using ResurrectedEternal.Configs;
+using ResurrectedEternal.Events;
+using ResurrectedEternal.Events.EventArgs;
+using ResurrectedEternal.GenericObjects;
+using ResurrectedEternal.Params;
+using ResurrectedEternal.Params.CSHelper;
+using ResurrectedEternal.Skills;
 using System;
 using System.Collections;
 using System.Collections.Generic;
@@ -13,7 +13,7 @@ using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
 
-namespace RRFull
+namespace ResurrectedEternal
 {
 
 

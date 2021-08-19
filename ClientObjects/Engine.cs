@@ -1,4 +1,4 @@
-﻿using RRFull.Memory;
+﻿using ResurrectedEternal.Memory;
 using System;
 using System.Collections;
 using System.Collections.Generic;
@@ -6,7 +6,7 @@ using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
 
-namespace RRFull.ClientObjects
+namespace ResurrectedEternal.ClientObjects
 {
     class Engine : ClientObject
     {

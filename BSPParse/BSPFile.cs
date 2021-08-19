@@ -3,7 +3,7 @@ using System.IO;
 using System.Linq;
 using System.Threading.Tasks;
 
-namespace RRFull.BSPParse
+namespace ResurrectedEternal.BSPParse
 {
     //Original: Thanks Zat for this https://github.com/BigMo/ZMH5_Helios/tree/master/%5BZMH5%5D%20Helios/CSGO/BSP
     //Modified: by TheRioMiner (v0.2)
@@ -32,10 +32,11 @@ namespace RRFull.BSPParse
         public StaticPropLump_t[] m_StaticProps;
         public dgamelump_t[] m_GameLumps;
 
+        public bool FromDirectory = false;
 
-
-        public BSPFile(Stream stream)
+        public BSPFile(Stream stream, bool fromDirectory = false)
         {
+            FromDirectory = fromDirectory;
             Parse(stream);
         }
 

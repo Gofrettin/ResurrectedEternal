@@ -1,13 +1,14 @@
-﻿using RRFull.BaseObjects;
-using RRFull.ClientObjects;
-using RRFull.Draw;
-using RRFull.Events;
-using RRFull.Events.EventArgs;
-using RRFull.Menu;
-using RRFull.Objects;
-using RRFull.Skills.Drawpackage;
-using RRFull.Skills.Factory;
-using RRFull.Skills.PushClips;
+﻿using ResurrectedEternal.BaseObjects;
+using ResurrectedEternal.ClientObjects;
+using ResurrectedEternal.Draw;
+using ResurrectedEternal.Events;
+using ResurrectedEternal.Events.EventArgs;
+using ResurrectedEternal.Menu;
+using ResurrectedEternal.Objects;
+using ResurrectedEternal.Skills.Drawpackage;
+using ResurrectedEternal.Skills.Factory;
+using ResurrectedEternal.Skills.PushClips;
+using RRFull;
 using SharpDX;
 using SharpDX.Mathematics.Interop;
 using System;
@@ -15,9 +16,9 @@ using System.Collections.Generic;
 using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
-using static RRFull.Events.EventManager;
+using static ResurrectedEternal.Events.EventManager;
 
-namespace RRFull.Skills
+namespace ResurrectedEternal.Skills
 {
     public enum DrawOffset
     {

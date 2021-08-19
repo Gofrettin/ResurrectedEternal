@@ -1,8 +1,8 @@
 ﻿using Newtonsoft.Json;
 using ResurrectedEternal.Configs.GamePlayConfig;
-using RRFull.Configs;
-using RRFull.Configs.GamePlayConfig;
-using RRFull.Configs.SubConfig;
+using ResurrectedEternal.Configs;
+using ResurrectedEternal.Configs.GamePlayConfig;
+using ResurrectedEternal.Configs.SubConfig;
 using SharpDX;
 using System;
 using System.Collections.Generic;
@@ -12,7 +12,7 @@ using System.Runtime.Serialization.Formatters.Binary;
 using System.Text;
 using System.Xml.Serialization;
 
-namespace RRFull
+namespace ResurrectedEternal
 {
     public enum ConfigType
     {

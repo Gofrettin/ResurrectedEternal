@@ -1,11 +1,11 @@
-﻿using RRFull.BaseObjects;
+﻿using ResurrectedEternal.BaseObjects;
 using System;
 using System.Collections.Generic;
 using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
 
-namespace RRFull.Skills.Drawpackage
+namespace ResurrectedEternal.Skills.Drawpackage
 {
     class DrawpackageManager
     {

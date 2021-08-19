@@ -1,13 +1,13 @@
-﻿using RRFull.BaseObjects;
-using RRFull.ClientObjects;
-using RRFull.ClientObjects.Cvars;
-using RRFull.Configs.ConfigSystem;
-using RRFull.Events;
-using RRFull.Events.EventArgs;
-using RRFull.GenericObjects;
-using RRFull.Memory;
-using RRFull.Objects;
-using RRFull.Params.CSHelper;
+﻿using ResurrectedEternal.BaseObjects;
+using ResurrectedEternal.ClientObjects;
+using ResurrectedEternal.ClientObjects.Cvars;
+using ResurrectedEternal.Configs.ConfigSystem;
+using ResurrectedEternal.Events;
+using ResurrectedEternal.Events.EventArgs;
+using ResurrectedEternal.GenericObjects;
+using ResurrectedEternal.Memory;
+using ResurrectedEternal.Objects;
+using ResurrectedEternal.Params.CSHelper;
 using RRWAPI;
 using System;
 using System.Collections.Generic;
@@ -16,7 +16,7 @@ using System.Runtime.InteropServices;
 using System.Text;
 using System.Threading.Tasks;
 
-namespace RRFull.Skills
+namespace ResurrectedEternal.Skills
 {
     //public class SkillModConvarUpdateEntry
     //{

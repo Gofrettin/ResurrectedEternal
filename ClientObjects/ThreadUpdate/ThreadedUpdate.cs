@@ -1,6 +1,6 @@
-﻿using RRFull.BaseObjects;
-using RRFull.Events.EventArgs;
-using RRFull.Memory;
+﻿using ResurrectedEternal.BaseObjects;
+using ResurrectedEternal.Events.EventArgs;
+using ResurrectedEternal.Memory;
 using System;
 using System.Collections.Concurrent;
 using System.Collections.Generic;
@@ -9,7 +9,7 @@ using System.Text;
 using System.Threading;
 using System.Threading.Tasks;
 
-namespace RRFull.ClientObjects.ThreadUpdate
+namespace ResurrectedEternal.ClientObjects.ThreadUpdate
 {
     public struct EntUpdate
     {

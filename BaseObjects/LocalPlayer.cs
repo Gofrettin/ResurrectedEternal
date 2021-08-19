@@ -1,12 +1,13 @@
-﻿using RRFull.Memory;
-using RRFull.Objects;
+﻿using ResurrectedEternal.Memory;
+using ResurrectedEternal.Objects;
+using RRFull;
 using System;
 using System.Collections.Generic;
 using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
 
-namespace RRFull.BaseObjects
+namespace ResurrectedEternal.BaseObjects
 {
     public class LocalPlayer : BasePlayer
     {

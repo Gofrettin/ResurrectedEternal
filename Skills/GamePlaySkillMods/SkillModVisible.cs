@@ -1,5 +1,5 @@
-﻿using RRFull.BaseObjects;
-using RRFull.ClientObjects;
+﻿using ResurrectedEternal.BaseObjects;
+using ResurrectedEternal.ClientObjects;
 using SharpDX;
 using System;
 using System.Collections.Generic;
@@ -7,7 +7,7 @@ using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
 
-namespace RRFull.Skills
+namespace ResurrectedEternal.Skills
 {
     class SkillModVisible : SkillMod
     {
@@ -15,12 +15,8 @@ namespace RRFull.Skills
         //no need to go hard on visual checks for the esp since the aimbot already does heavy checks
         private TimeSpan _interval = TimeSpan.FromMilliseconds(20);
 
-        private MapManager MapManager;
-
-
         public SkillModVisible(Engine engine, Client client) : base(engine, client)
         {
-            MapManager = client.MapManager;
         }
 
         public override void AfterUpdate()
@@ -52,7 +48,7 @@ namespace RRFull.Skills
                 if (item.m_bIsActive)
                 {
                     //if (item.ValidBoneMatrix)
-                    VisibleCheck(Client.LocalPlayer, item);
+                    item.IsVisible = IsVisibleCheck(Client.LocalPlayer, item, (VisibleCheck)Config.AimbotConfig.VisibleCheckOption.Value);
                     item.m_dtLastVisCheck = DateTime.Now;
                     continue;
                 }
@@ -72,10 +68,10 @@ namespace RRFull.Skills
                     if (!Generators.IsFlashbang(item.m_szModelName)) continue;
                     if (item.IsValid)
                     {
-                        if ((VisibleCheck)Config.OtherConfig.VisibleCheckOption.Value == global::VisibleCheck.RayTrace && MapManager.VisibleCheckAvailable)
-                            item.IsVisible = VisibleCheck(Client.LocalPlayer.m_vecHead, item.m_vecOrigin);
+                        if ((VisibleCheck)Config.AimbotConfig.VisibleCheckOption.Value == global::VisibleCheck.RayTrace && MapManager.VisibleCheckAvailable)
+                            item.IsVisible = IsVisibleCheck(Client.LocalPlayer.m_vecHead, item.m_vecOrigin);
                         else
-                            item.IsVisible = VisibleByMask(item);
+                            item.IsVisible = false;
                     }
                     else
                         item.IsVisible = false;
@@ -92,8 +88,8 @@ namespace RRFull.Skills
                 {
                     if (!item.m_bIsActive)
                     {
-                        if ((VisibleCheck)Config.OtherConfig.VisibleCheckOption.Value == global::VisibleCheck.RayTrace && MapManager.VisibleCheckAvailable)
-                            item.Visible = VisibleCheck(Client.LocalPlayer.m_vecHead, item.Head);
+                        if ((VisibleCheck)Config.AimbotConfig.VisibleCheckOption.Value == global::VisibleCheck.RayTrace && MapManager.VisibleCheckAvailable)
+                            item.Visible = IsVisibleCheck(Client.LocalPlayer.m_vecHead, item.Head);
                         else
                             item.Visible = VisibleByMask(item);
                     }
@@ -104,30 +100,19 @@ namespace RRFull.Skills
         }
 
 
-        private void VisibleCheck(LocalPlayer _p, BasePlayer _target)
+        public override bool IsVisibleCheck(LocalPlayer _p, BasePlayer _target, VisibleCheck _checkType)
         {
-
-
-            //var _pHead = _p.m_vecHead;
-            var _pHead = _p.m_vEyePosition;
-            //Console.WriteLine(_pHead);
-            //eye to eye?
-            if (MapManager.VisibleCheckAvailable && (VisibleCheck)Config.OtherConfig.VisibleCheckOption.Value == global::VisibleCheck.RayTrace)
-                _target.IsVisible = MapManager.m_dwMap.IsVisible(_pHead, _target.m_vecHead + (SharpDX.Vector3.UnitZ * 6)) || MapManager.m_dwMap.IsVisible(_pHead, _target.m_vecChest);
-            else
-                _target.IsVisible = VisibleByMask(_target);
-
-
-        }
-        private bool VisibleByMask(BaseEntity _entity)
-        {
-            return (_entity.m_iSpottedByMask & 1 << Client.m_iLocalPlayerIndex - 1) != 0;
+            return base.IsVisibleCheck(_p, _target, _checkType);
         }
 
-        private bool VisibleCheck(Vector3 from, Vector3 tp)
+        public override bool VisibleByMask(BaseEntity _entity)
         {
-            return MapManager.m_dwMap.IsVisible(from, tp);
+            return base.VisibleByMask(_entity);
+        }
 
+        public override bool IsVisibleCheck(Vector3 from, Vector3 tp)
+        {
+            return base.IsVisibleCheck(from, tp);
         }
 
         public override bool Update()

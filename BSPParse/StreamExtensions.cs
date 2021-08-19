@@ -4,7 +4,7 @@ using System.Text;
 using System.Linq;
 using System.Runtime.InteropServices;
 
-namespace RRFull.BSPParse
+namespace ResurrectedEternal.BSPParse
 {
     public static class StreamExtension
     {

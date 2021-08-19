@@ -1,4 +1,4 @@
-﻿using RRFull.Events;
+﻿using ResurrectedEternal.Events;
 using RRWAPI;
 using System;
 using System.Collections.Generic;
@@ -9,7 +9,7 @@ using System.Threading;
 using System.Threading.Tasks;
 using System.Windows.Forms;
 
-namespace RRFull.Menu
+namespace ResurrectedEternal.Menu
 {
     class KeyHandle
     {

@@ -3,7 +3,7 @@ using System.Globalization;
 using System.Runtime.CompilerServices;
 using System.Runtime.InteropServices;
 
-namespace RRFull.BSPParse
+namespace ResurrectedEternal.BSPParse
 {
 	// Copyright (c) 2010-2014 SharpDX - Alexandre Mutel
 	// 

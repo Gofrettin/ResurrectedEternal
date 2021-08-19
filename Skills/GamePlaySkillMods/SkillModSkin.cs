@@ -1,13 +1,13 @@
-﻿using RRFull.BaseObjects;
-using RRFull.ClientObjects;
-using RRFull.GenericObjects;
+﻿using ResurrectedEternal.BaseObjects;
+using ResurrectedEternal.ClientObjects;
+using ResurrectedEternal.GenericObjects;
 using System;
 using System.Collections.Generic;
 using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
 
-namespace RRFull.Skills
+namespace ResurrectedEternal.Skills
 {
 
     public class xSkin

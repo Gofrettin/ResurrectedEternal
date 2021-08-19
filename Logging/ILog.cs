@@ -4,7 +4,7 @@
 //using System.Text;
 //using System.Threading.Tasks;
 
-//namespace RRFull.Logging
+//namespace ResurrectedEternal.Logging
 //{
 //    public static class ILog
 //    {
