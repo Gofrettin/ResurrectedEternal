@@ -508,24 +508,10 @@ namespace RRFull.Skills
                     case AimPoint.Chest:
                         _fovRange = EngineMath.RealFovDistance(_spot, _vang, item.m_vecChest);
                         break;
-                    
-                        
-                        break;
                     case AimPoint.Body:
                     case AimPoint.Any:
                     default:
                         _fovRange = EngineMath.RealFovDistance(_spot, _vang, item.m_vecBody);
-                        //var _bones = item.GetUpperBody();
-                        //for (int i = 0; i < _bones.Length; i++)
-                        //{
-                        //    _fovRange = EngineMath.RealFovDistance(_spot, _vang, _bones[i]);
-                        //    if (_fovRange <= m_fAngle && _fovRange < _curMin)
-                        //    {
-                        //        _curMin = _fovRange;
-                        //        _candidate = item;
-                        //    }
-                        //}
-
                         break;
                 }
                 if (_fovRange <= m_fAngle && _fovRange < _curMin)
