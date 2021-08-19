@@ -7,7 +7,7 @@ using SharpDX.Direct3D;
 using SharpDX.DirectWrite;
 using SharpDX.Mathematics.Interop;
 
-namespace RRFull.Draw
+namespace ResurrectedEternal.Draw
 {
     public class Drawing
     {

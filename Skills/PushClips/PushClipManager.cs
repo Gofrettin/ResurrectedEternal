@@ -1,6 +1,6 @@
-﻿using RRFull.Events;
-using RRFull.Events.EventArgs;
-using RRFull.Objects;
+﻿using ResurrectedEternal.Events;
+using ResurrectedEternal.Events.EventArgs;
+using ResurrectedEternal.Objects;
 using SharpDX;
 using System;
 using System.Collections.Generic;
@@ -8,7 +8,7 @@ using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
 
-namespace RRFull.Skills.PushClips
+namespace ResurrectedEternal.Skills.PushClips
 {
     public class PushClip
     {

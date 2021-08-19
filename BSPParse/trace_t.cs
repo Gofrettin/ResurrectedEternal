@@ -1,4 +1,4 @@
-﻿namespace RRFull.BSPParse
+﻿namespace ResurrectedEternal.BSPParse
 {
     struct trace_t
     {

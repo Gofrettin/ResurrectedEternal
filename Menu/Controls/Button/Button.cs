@@ -5,7 +5,7 @@ using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
 
-namespace RRFull.Menu.Controls.Button
+namespace ResurrectedEternal.Menu.Controls.Button
 {
     public class MenuButton
     {

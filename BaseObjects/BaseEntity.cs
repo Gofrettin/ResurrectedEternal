@@ -1,4 +1,5 @@
-﻿using RRFull.Memory;
+﻿using ResurrectedEternal.Memory;
+using RRFull;
 using SharpDX;
 using System;
 using System.Collections.Generic;
@@ -7,7 +8,7 @@ using System.Runtime.InteropServices;
 using System.Text;
 using System.Threading.Tasks;
 
-namespace RRFull.BaseObjects
+namespace ResurrectedEternal.BaseObjects
 {
     public class BaseEntity
     {

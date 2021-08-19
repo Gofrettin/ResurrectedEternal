@@ -4,7 +4,7 @@ using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
 
-namespace RRFull
+namespace ResurrectedEternal
 {
     class ThreadSafeList<T>
     {

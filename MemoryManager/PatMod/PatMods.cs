@@ -4,7 +4,7 @@ using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
 
-namespace RRFull.MemoryManager.PatMod
+namespace ResurrectedEternal.MemoryManager.PatMod
 {
     class ModulePattern
     {

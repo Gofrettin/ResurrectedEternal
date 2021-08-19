@@ -1,6 +1,6 @@
 ﻿using RedRain;
-using RRFull.Events;
-using RRFull.Params.CSHelper;
+using ResurrectedEternal.Events;
+using ResurrectedEternal.Params.CSHelper;
 using RRWAPI;
 using System;
 using System.Collections.Generic;
@@ -10,9 +10,9 @@ using System.Runtime.InteropServices;
 using System.Text;
 using System.Threading;
 using System.Threading.Tasks;
-using static RRFull.Events.EventManager;
+using static ResurrectedEternal.Events.EventManager;
 
-namespace RRFull.Memory
+namespace ResurrectedEternal.Memory
 {
     public class MemoryLoader
     {

@@ -1,12 +1,12 @@
-﻿using RRFull.BaseObjects;
-using RRFull.ClientObjects;
+﻿using ResurrectedEternal.BaseObjects;
+using ResurrectedEternal.ClientObjects;
 using System;
 using System.Collections.Generic;
 using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
 
-namespace RRFull.Skills.EnvironmentSkillMods
+namespace ResurrectedEternal.Skills.EnvironmentSkillMods
 {
     class SkillModSpriteController : SkillMod
     {

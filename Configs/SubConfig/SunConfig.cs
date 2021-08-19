@@ -5,7 +5,7 @@ using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
 
-namespace RRFull.Configs.SubConfig
+namespace ResurrectedEternal.Configs.SubConfig
 {
     [System.Serializable]
     public class SunConfig

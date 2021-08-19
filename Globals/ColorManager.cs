@@ -1,5 +1,5 @@
 ﻿using RRFull;
-using RRFull.Configs.ConfigSystem;
+using ResurrectedEternal.Configs.ConfigSystem;
 using System;
 using System.Collections.Generic;
 using System.IO;

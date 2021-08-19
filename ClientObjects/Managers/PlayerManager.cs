@@ -4,7 +4,7 @@ using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
 
-namespace RRFull.ClientObjects.Managers
+namespace ResurrectedEternal.ClientObjects.Managers
 {
     public class PlayerManager
     {

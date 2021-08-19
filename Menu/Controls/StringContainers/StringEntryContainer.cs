@@ -5,7 +5,7 @@ using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
 
-namespace RRFull.Menu.Controls.StringContainers
+namespace ResurrectedEternal.Menu.Controls.StringContainers
 {
 
     class StringEntryContainer : StringContainer

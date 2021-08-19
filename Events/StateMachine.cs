@@ -1,11 +1,11 @@
-﻿using RRFull.Configs.ConfigSystem;
+﻿using ResurrectedEternal.Configs.ConfigSystem;
 using System;
 using System.Collections.Generic;
 using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
 
-namespace RRFull.Events
+namespace ResurrectedEternal.Events
 {
     public enum Modus
     {

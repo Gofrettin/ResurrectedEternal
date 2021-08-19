@@ -1,7 +1,7 @@
 ﻿using System;
 using System.Runtime.InteropServices;
 
-namespace RRFull.BSPParse
+namespace ResurrectedEternal.BSPParse
 {
     public static class FastSize<T>
     {

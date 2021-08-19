@@ -1,6 +1,6 @@
 ﻿using NAudio.Wave;
 using NAudio.Wave.SampleProviders;
-using RRFull.Events;
+using ResurrectedEternal.Events;
 using System;
 using System.Collections.Generic;
 

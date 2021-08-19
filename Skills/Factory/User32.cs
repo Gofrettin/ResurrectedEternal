@@ -5,7 +5,7 @@ using System.Runtime.InteropServices;
 using System.Text;
 using System.Threading.Tasks;
 
-namespace RRFull.Skills.Factory
+namespace ResurrectedEternal.Skills.Factory
 {
     public static class User32
     {

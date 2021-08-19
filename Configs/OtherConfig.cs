@@ -5,7 +5,7 @@ using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
 
-namespace RRFull.Configs
+namespace ResurrectedEternal.Configs
 {
     public class OtherConfig
     {
@@ -429,14 +429,7 @@ namespace RRFull.Configs
             GroupId = "fl_6"
         };
 
-        public ConfigValueEntry VisibleCheckOption = new ConfigValueEntry()
-        {
-            Header = "Visible Check",
-            Name = "Check Type",
-            Value = VisibleCheck.SlowTrace,
-            MinValue = 0,
-            MaxValue = Enum.GetValues(typeof(VisibleCheck)).Length - 1,
-        };
+
 
     }
 }

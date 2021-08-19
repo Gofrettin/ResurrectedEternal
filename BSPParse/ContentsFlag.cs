@@ -1,6 +1,6 @@
 ﻿using System;
 
-namespace RRFull.BSPParse
+namespace ResurrectedEternal.BSPParse
 {
     [Flags]
     public enum ContentsFlag : uint

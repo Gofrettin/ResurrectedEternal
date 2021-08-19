@@ -6,7 +6,7 @@ using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
 
-namespace RRFull.Configs.ConfigSystem
+namespace ResurrectedEternal.Configs.ConfigSystem
 {
     public static class Serializer
     {

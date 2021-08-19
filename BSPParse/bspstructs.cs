@@ -1,4 +1,5 @@
-﻿using RRFull;
+﻿using ResurrectedEternal;
+using RRFull;
 using SharpDX;
 using System;
 using System.Collections.Generic;

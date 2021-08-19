@@ -1,6 +1,6 @@
 ﻿using AudioMagic.Audio;
-using RRFull.Configs.ConfigSystem;
-using RRFull.Events;
+using ResurrectedEternal.Configs.ConfigSystem;
+using ResurrectedEternal.Events;
 using System;
 using System.Collections.Generic;
 using System.IO;
@@ -9,7 +9,7 @@ using System.Reflection;
 using System.Text;
 using System.Threading.Tasks;
 
-namespace RRFull.SoundEngine
+namespace ResurrectedEternal.SoundEngine
 {
     public static class SoundCache
     {

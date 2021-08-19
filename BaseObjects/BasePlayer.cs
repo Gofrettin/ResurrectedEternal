@@ -1,6 +1,7 @@
-﻿using RRFull.ClientObjects;
-using RRFull.ClientObjects.Other;
-using RRFull.Memory;
+﻿using ResurrectedEternal.ClientObjects;
+using ResurrectedEternal.ClientObjects.Other;
+using ResurrectedEternal.Memory;
+using RRFull;
 using SharpDX;
 using System;
 using System.Collections.Generic;
@@ -8,7 +9,7 @@ using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
 
-namespace RRFull.BaseObjects
+namespace ResurrectedEternal.BaseObjects
 {
 
     //public class WeightedBone

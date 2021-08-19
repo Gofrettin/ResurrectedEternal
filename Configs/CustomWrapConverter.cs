@@ -1,7 +1,7 @@
 ﻿using Newtonsoft.Json;
 using System;
 
-namespace RRFull.Configs
+namespace ResurrectedEternal.Configs
 {
     public class CustomWrapConverter : JsonConverter
     {

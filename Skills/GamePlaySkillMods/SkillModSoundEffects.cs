@@ -1,14 +1,14 @@
-﻿using RRFull.ClientObjects;
-using RRFull.Events;
-using RRFull.Events.EventArgs;
-using RRFull.SoundEngine;
+﻿using ResurrectedEternal.ClientObjects;
+using ResurrectedEternal.Events;
+using ResurrectedEternal.Events.EventArgs;
+using ResurrectedEternal.SoundEngine;
 using System;
 using System.Collections.Generic;
 using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
 
-namespace RRFull.Skills.GamePlaySkillMods
+namespace ResurrectedEternal.Skills.GamePlaySkillMods
 {
     class SkillModSoundEffects : SkillMod
     {

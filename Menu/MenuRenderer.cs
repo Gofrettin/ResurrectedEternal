@@ -1,7 +1,7 @@
-﻿using RRFull.Configs;
-using RRFull.Menu.Controls;
-using RRFull.Menu.Controls.Button;
-using RRFull.Skills.Factory;
+﻿using ResurrectedEternal.Configs;
+using ResurrectedEternal.Menu.Controls;
+using ResurrectedEternal.Menu.Controls.Button;
+using ResurrectedEternal.Skills.Factory;
 using SharpDX;
 using System;
 using System.Collections.Generic;
@@ -11,7 +11,7 @@ using System.Text;
 using System.Threading;
 using System.Threading.Tasks;
 
-namespace RRFull.Menu
+namespace ResurrectedEternal.Menu
 {
     public class MainMenu
     {

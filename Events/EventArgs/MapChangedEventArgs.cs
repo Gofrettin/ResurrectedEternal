@@ -4,7 +4,7 @@ using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
 
-namespace RRFull.Events.EventArgs
+namespace ResurrectedEternal.Events.EventArgs
 {
     public class MapChangedEventArgs
     {

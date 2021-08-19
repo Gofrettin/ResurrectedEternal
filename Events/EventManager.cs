@@ -1,4 +1,4 @@
-﻿using RRFull.Events.EventArgs;
+﻿using ResurrectedEternal.Events.EventArgs;
 using SharpDX;
 using System;
 using System.Collections.Generic;
@@ -6,7 +6,7 @@ using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
 
-namespace RRFull.Events
+namespace ResurrectedEternal.Events
 {
     public static class EventManager
     {

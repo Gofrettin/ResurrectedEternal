@@ -1,14 +1,14 @@
 ﻿using Newtonsoft.Json;
-using RRFull.Configs.ConfigSystem;
-using RRFull.Configs.GamePlayConfig;
-using RRFull.Configs.SubConfig;
+using ResurrectedEternal.Configs.ConfigSystem;
+using ResurrectedEternal.Configs.GamePlayConfig;
+using ResurrectedEternal.Configs.SubConfig;
 using System;
 using System.Collections.Generic;
 using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
 
-namespace RRFull.Configs
+namespace ResurrectedEternal.Configs
 {
 
     public static class ConfigFactory

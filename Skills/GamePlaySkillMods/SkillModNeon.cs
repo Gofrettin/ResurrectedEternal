@@ -1,6 +1,6 @@
-using RRFull.BaseObjects;
-using RRFull.ClientObjects;
-using RRFull.Memory;
+using ResurrectedEternal.BaseObjects;
+using ResurrectedEternal.ClientObjects;
+using ResurrectedEternal.Memory;
 using SharpDX;
 using System;
 using System.Collections.Generic;
@@ -9,20 +9,18 @@ using System.Runtime.InteropServices;
 using System.Text;
 using System.Threading.Tasks;
 
-namespace RRFull.Skills
+namespace ResurrectedEternal.Skills
 {
     class SkillModNeon : SkillMod
     {
         private DateTime _lastGlowUpdate = DateTime.Now;
-        private TimeSpan _Interval = TimeSpan.FromMilliseconds(33);
+        private TimeSpan _Interval = TimeSpan.FromMilliseconds(25);
 
         private byte m_dwOrignialValue = 0x74;
         private byte m_dwForcedValue = 0xEB;
 
         public SkillModNeon(Engine engine, Client client) : base(engine, client)
         {
-            //read the original byte on glow enforcement.
-            //m_dwOrignialValue = MemoryLoader.instance.Reader.Read<byte>(Client.ModuleAddress + g_Globals.Offset.dwForceGlow);
         }
 
         public override void AfterUpdate()
@@ -43,40 +41,21 @@ namespace RRFull.Skills
                 return false;
             return true;
         }
-        //private void Write(BasePlayer P)
-        //{
-        //    WriteGlowObject(P);
-        //}
 
-        //private void WriteGlowObject(BasePlayer p)
-        //{
-        //    var _glowObj = Client.GetGlowObject(p.m_iGlowIndex);
-        //    SetGlowStruct(_glowObj, Generators.GetColorBySetting(Config, p.Team, p.IsVisible, p.m_bGunGameImmunity));
-        //    Client.WriteGlowObject(_glowObj, p.m_iGlowIndex);
-        //}
 
         private void WriteByIndex(m_dwGlowObject glowObject, int idx, SharpDX.Color color, bool visible)
         {
-
-
             SetGlowStruct(ref glowObject, color, visible);
             Write(glowObject, idx);
         }
 
         private void Write(m_dwGlowObject glowObject, int idx)
         {
-            //IntPtr _addr = Client.m_dwGlowManager.m_pGlowArray + (0x38 * idx);
 
-            //ILog.AddToLog("[GLOW]Before Write", idx + " " + glowObject.dwEntity.ToString());
             if (idx > Client.m_dwGlowManager.m_iNumObjects)
                 return;
             IntPtr _addr = Client.m_dwGlowManager.m_pGlowArray + (idx * 0x38);
 
-            //var verify = MemoryLoader.instance.Reader.Read<IntPtr>(_addr);
-            ////ILog.AddToLog("[GLOW]Before Write - Verify ", idx + " " + verify.ToString());
-            //if (verify == IntPtr.Zero || glowObject.pEntity != verify)
-            //    return;
-            //MemoryLoader.instance.Reader.Write<m_dwGlowObject>(_addr, glowObject);
             MemoryLoader.instance.Reader.Write<Vector3>(_addr + 0x08,
                 new Vector3(glowObject.R,
                 glowObject.G,
@@ -89,8 +68,7 @@ namespace RRFull.Skills
             MemoryLoader.instance.Reader.Write<bool>(_addr + 0x29, glowObject.bRenderWhenUnoccluded);
             MemoryLoader.instance.Reader.Write<bool>(_addr + 0x2A, glowObject.bFullBloom);
             MemoryLoader.instance.Reader.Write<byte>(_addr + 0x30, glowObject.m_nRenderStyle);
-            //ILog.AddToLog("[GLOW]After Write", "SUCCESS");
-            //MemoryLoader.instance.Reader.Write<m_dwGlowObject_NOENT>(_addr, glowObject); //+ 0x4 ?
+
         }
 
         private void UnGlow(m_dwGlowObject glowObject, int idx)
@@ -102,10 +80,6 @@ namespace RRFull.Skills
                 return;
             IntPtr _addr = Client.m_dwGlowManager.m_pGlowArray + (idx * 0x38);
 
-            //var verify = MemoryLoader.instance.Reader.Read<IntPtr>(_addr);
-            //ILog.AddToLog("[GLOW]Before Write - Verify ", idx + " " + verify.ToString());
-            //if (verify == IntPtr.Zero || glowObject.dwEntity != verify)
-            //    return;
             MemoryLoader.instance.Reader.Write<Vector3>(_addr + 0x08,
                 new Vector3(0f,
                 0f,
@@ -138,15 +112,7 @@ namespace RRFull.Skills
 
         void SetGlowStruct(ref m_dwGlowObject s, SharpDX.Color c, bool visible = false)
         {
-            //m_dwGlowObject_NOENT _noEnt = new m_dwGlowObject_NOENT();
-            //_noEnt.Color = new float[]
-            //{
-            //    c.R / 255f,
-            //    c.G / 255f,
-            //    c.B / 255f,
-            //    c.A / 255f
 
-            //};
             s.R = c.R / 255f;
             s.G = c.G / 255f;
             s.B = c.B / 255f;
@@ -157,8 +123,7 @@ namespace RRFull.Skills
             s.bFullBloom = (bool)Config.NeonConfig.FullBloom.Value;
             s.m_flGlowAlphaFunctionOfMaxVelocity = Convert.ToSingle(Config.NeonConfig.MaxVelocity.Value);
             s.m_flGlowAlphaMax = (float)Config.NeonConfig.AlphaMax.Value;
-            //return _noEnt;
-            //s.m_flGlowPulseOverdrive = (float)Config.NeonConfig.PulseOverDrive.Value;
+
         }
 
         private byte GetGlowStyle(bool visible)
@@ -170,19 +135,6 @@ namespace RRFull.Skills
             else
                 return Convert.ToByte(Config.NeonConfig.GlowStyle.Value);
         }
-
-        //private void SetGlowStruct(ref GlowObjectDefinition_t s, SharpDX.Color c, bool MatrixGlowOnSpot = false)
-        //{
-
-        //    s.fR = c.R / 255f;
-        //    s.fG = c.G / 255f;
-        //    s.fB = c.B / 255f;
-        //    s.fAlpha = c.A / 255f;
-        //    s.m_bInnerGlow = (bool)Config.NeonConfig.NeonInnerGlow.Value;
-        //    s.bRenderWhenOccluded = true;
-        //    s.bRenderWhenUnoccluded = false;
-        //    s.bFullBloomRender = (bool)Config.NeonConfig.FullBloom.Value;
-        //}
 
 
         private void UpdateGlows()
@@ -296,16 +248,6 @@ namespace RRFull.Skills
                 UpdateGlows();
                 _lastGlowUpdate = DateTime.Now;
 
-                //var _players = Filter.GetActivePlayers((TargetType)Config.VisualConfig.Type.Value);
-
-                //if (_players == null || _players.Count == 0)
-                //    return false;
-
-                //foreach (var item in _players)
-                //{
-                //    if (!item.m_bIsActive) continue;
-                //    Write(item);
-                //}
             }
             else
             {
@@ -313,18 +255,7 @@ namespace RRFull.Skills
             }
             return true;
         }
-        //private void Enforce()
-        //{
-        //    var _r = MemoryLoader.instance.Reader.Read<byte>(ModuleAddress + g_Globals.Offset.dwForceGlow);
-        //    if (_r == 0xEB)
-        //    {
-        //        PushCip(string.Format("[{0}]Glow steady...", "0x" + (ModuleAddress + g_Globals.Offset.dwForceGlow).ToString("X")), 5f, SharpDX.Color.Green);
-        //        return;
-        //    }
 
-        //    MemoryLoader.instance.Reader.Write<byte>(ModuleAddress + g_Globals.Offset.dwForceGlow, 0xEB);
-        //    PushCip(string.Format("[{0}]Glow no steady...", "0x" + (ModuleAddress + g_Globals.Offset.dwForceGlow).ToString("X")), 5f, SharpDX.Color.Green);
-        //}
         private void DisableForce()
         {
             if (MemoryLoader.instance.Reader.Read<byte>(Client.ModuleAddress + g_Globals.Offset.dwForceGlow) == m_dwOrignialValue)

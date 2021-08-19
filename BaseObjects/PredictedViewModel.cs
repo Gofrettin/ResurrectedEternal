@@ -1,11 +1,11 @@
-﻿using RRFull.Memory;
+﻿using ResurrectedEternal.Memory;
 using System;
 using System.Collections.Generic;
 using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
 
-namespace RRFull.BaseObjects
+namespace ResurrectedEternal.BaseObjects
 {
     public class PredictedViewModel : BaseEntity
     {

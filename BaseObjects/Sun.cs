@@ -1,12 +1,12 @@
-﻿using RRFull.BaseObjects.SunMod;
-using RRFull.Memory;
+﻿using ResurrectedEternal.BaseObjects.SunMod;
+using ResurrectedEternal.Memory;
 using System;
 using System.Collections.Generic;
 using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
 
-namespace RRFull.BaseObjects
+namespace ResurrectedEternal.BaseObjects
 {
     class Sun : BaseEntity
     {

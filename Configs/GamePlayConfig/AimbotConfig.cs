@@ -4,7 +4,7 @@ using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
 
-namespace RRFull.Configs.GamePlayConfig
+namespace ResurrectedEternal.Configs.GamePlayConfig
 {
     public class AimbotConfig
     {
@@ -29,6 +29,7 @@ namespace RRFull.Configs.GamePlayConfig
             IsGrouped = true,
             GroupId = "col1"
         };
+
         public ConfigValueEntry Angle = new ConfigValueEntry()
         {
             Name = "Angle",
@@ -57,16 +58,6 @@ namespace RRFull.Configs.GamePlayConfig
             MinValue = false,
             //ValueType = typeof(bool),
             Value = false,
-            IsGrouped = true,
-            GroupId = "col3"
-        };
-        public ConfigValueEntry AimSpottedOnly = new ConfigValueEntry()
-        {
-            Name = "Spotted",
-            MaxValue = true,
-            MinValue = false,
-            //ValueType = typeof(bool),
-            Value = true,
             IsGrouped = true,
             GroupId = "col3"
         };
@@ -150,6 +141,14 @@ namespace RRFull.Configs.GamePlayConfig
             GroupId = "col_wb"
             //ValueType = typeof(bool),
         };
+        public ConfigValueEntry VisibleCheckOption = new ConfigValueEntry()
+        {
+            Header = "Visible Check",
+            Name = "Check Type",
+            Value = VisibleCheck.SlowTrace,
+            MinValue = 0,
+            MaxValue = Enum.GetValues(typeof(VisibleCheck)).Length - 1,
+        };
         public ConfigValueEntry Smooth = new ConfigValueEntry()
         {
             Header = "Smooth Options",
@@ -189,7 +188,7 @@ namespace RRFull.Configs.GamePlayConfig
             MaxValue = Enum.GetValues(typeof(SmoothType)).Length - 1,
             MinValue = 0,
             //ValueType = typeof(SmoothType),
-            Value = RRFull.SmoothType.SmoothStep,
+            Value = ResurrectedEternal.SmoothType.SmoothStep,
             IsGrouped = true,
             GroupId = "col101"
         };
@@ -265,10 +264,10 @@ namespace RRFull.Configs.GamePlayConfig
         {
             Header = "RCS Smoothing",
             Name = "Smooth Type",
-            MaxValue = Enum.GetValues(typeof(RRFull.RCSSmoothType)).Length - 1,
+            MaxValue = Enum.GetValues(typeof(ResurrectedEternal.RCSSmoothType)).Length - 1,
             MinValue = 0,
             //ValueType = typeof(SmoothType),
-            Value = RRFull.RCSSmoothType.Adaptive,
+            Value = ResurrectedEternal.RCSSmoothType.Adaptive,
             //ValueType = typeof(bool),
             IsGrouped = true,
             GroupId = "rcsSmoothcol2"

@@ -1,4 +1,4 @@
-﻿using RRFull.Memory;
+﻿using ResurrectedEternal.Memory;
 using SharpDX;
 using System;
 using System.Collections.Generic;
@@ -6,7 +6,7 @@ using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
 
-namespace RRFull.BaseObjects
+namespace ResurrectedEternal.BaseObjects
 {
     class ProjectileEntity : BaseEntity
     {

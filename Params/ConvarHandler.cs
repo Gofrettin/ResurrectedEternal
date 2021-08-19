@@ -1,14 +1,15 @@
-﻿using RRFull.ClientObjects.Cvars;
-using RRFull.Events;
-using RRFull.Events.EventArgs;
-using RRFull.Params.CSHelper;
+﻿using ResurrectedEternal.ClientObjects.Cvars;
+using ResurrectedEternal.Events;
+using ResurrectedEternal.Events.EventArgs;
+using ResurrectedEternal.Params.CSHelper;
+using RRFull;
 using System;
 using System.Collections.Generic;
 using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
 
-namespace RRFull.Params
+namespace ResurrectedEternal.Params
 {
     class ConvarHandler
     {

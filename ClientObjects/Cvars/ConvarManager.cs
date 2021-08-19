@@ -1,6 +1,6 @@
 ﻿using RedRain;
-using RRFull.Memory;
-using RRFull.Params.CSHelper;
+using ResurrectedEternal.Memory;
+using ResurrectedEternal.Params.CSHelper;
 using System;
 using System.Collections.Generic;
 using System.Linq;
@@ -8,7 +8,7 @@ using System.Runtime.InteropServices;
 using System.Text;
 using System.Threading.Tasks;
 
-namespace RRFull.ClientObjects.Cvars
+namespace ResurrectedEternal.ClientObjects.Cvars
 {
 
     //kNUM buckets?

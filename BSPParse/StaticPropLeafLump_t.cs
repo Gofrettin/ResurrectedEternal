@@ -1,6 +1,6 @@
 ﻿using System.Runtime.InteropServices;
 
-namespace RRFull.BSPParse
+namespace ResurrectedEternal.BSPParse
 {
     [StructLayout(LayoutKind.Sequential)]
     public struct StaticPropLeafLump_t

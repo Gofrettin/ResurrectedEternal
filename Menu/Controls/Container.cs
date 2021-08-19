@@ -1,4 +1,4 @@
-﻿using RRFull.Menu.Controls.StringContainers;
+﻿using ResurrectedEternal.Menu.Controls.StringContainers;
 using SharpDX;
 using System;
 using System.Collections.Generic;
@@ -6,7 +6,7 @@ using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
 
-namespace RRFull.Menu.Controls
+namespace ResurrectedEternal.Menu.Controls
 {
     public class Container
     {

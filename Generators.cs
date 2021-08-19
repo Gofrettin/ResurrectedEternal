@@ -1,9 +1,9 @@
 using Newtonsoft.Json;
-using RRFull.BaseObjects;
-using RRFull.BaseObjects.Fire;
-using RRFull.BSPParse;
-using RRFull.GenericObjects;
-using RRFull.MemoryManager.PatMod;
+using ResurrectedEternal.BaseObjects;
+using ResurrectedEternal.BaseObjects.Fire;
+using ResurrectedEternal.BSPParse;
+using ResurrectedEternal.GenericObjects;
+using ResurrectedEternal.MemoryManager.PatMod;
 using System;
 using System.Collections.Generic;
 using System.IO;
@@ -11,7 +11,7 @@ using System.IO.Compression;
 using System.Reflection;
 using System.Text;
 
-namespace RRFull
+namespace ResurrectedEternal
 {
     public static class Generators
     {
@@ -34,14 +34,6 @@ namespace RRFull
 
             return _pad + value;
 
-            //int diff = 0;
-            //string _newValue = "";
-            //if (value.Length < pad)
-            //    diff = pad - value.Length;
-            //for (int i = 0; i < diff; i++)
-            //    _newValue += " ";
-
-            //return _newValue += value;
 
         }
         public static bool IsProjectile(ClientClass _class)
@@ -374,30 +366,33 @@ namespace RRFull
         }
         public static BSPFile GenerateBSP(string path, string mapDir)
         {
+            bool available = false;
             if (string.IsNullOrEmpty(path) || string.IsNullOrEmpty(mapDir))
                 return null;
+            //save our previous states on first generation of bsp
 
             //maps/de_dust2.bsp
             var _map = "";
             if (File.Exists(g_Globals.MainEntryAssembly + mapDir))
+            {
+                //we have the addon so we want to use raytrace
+                available = true;
+                //SetVisibleCheck(VisibleCheck.RayTrace);
                 _map = g_Globals.MainEntryAssembly + mapDir;
+            }
             else
+            {
+
+
+                //we dont have the addon
                 _map = path + mapDir;
+                //check if we have to restore our visible check to the previous one
 
-            //var _resultSet = Henker.RPC.Request(4, mapDir);
-
-            //if (_resultSet == null || _resultSet.Length == 0)
-            //    return null;
-            //make it return the map path so we can simply grab it from the file 
+            }
+            //make it return the map path so we can simply grab it from the file and dont cause unnecessary out of memory exceptions
             using (var stream = File.OpenRead(_map))
             {
-                return new BSPFile(stream);
-                //using (var zipStream = new System.IO.Compression.GZipStream(stream, System.IO.Compression.CompressionMode.Decompress))
-                //using (System.IO.MemoryStream ms = new System.IO.MemoryStream())
-                //{
-                //    zipStream.CopyTo(ms);
-                //    return new BetterExternalRaytrace.BSPFile(ms.ToArray());
-                //}
+                return new BSPFile(stream, available);
             }
         }
         public static bool Exclude(ClientClass _class)
@@ -720,6 +715,7 @@ namespace RRFull
                 case ItemDefinitionIndex.PPBIZON:
                 case ItemDefinitionIndex.MP7:
                 case ItemDefinitionIndex.MP9:
+                case ItemDefinitionIndex.MP5SD:
                     return WeaponClass.SMG;
 
                 case ItemDefinitionIndex.KNIFE:

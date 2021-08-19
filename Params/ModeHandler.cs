@@ -1,12 +1,12 @@
-﻿using RRFull.Configs.ConfigSystem;
-using RRFull.Params.CSHelper;
+﻿using ResurrectedEternal.Configs.ConfigSystem;
+using ResurrectedEternal.Params.CSHelper;
 using System;
 using System.Collections.Generic;
 using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
 
-namespace RRFull.Params
+namespace ResurrectedEternal.Params
 {
     class ModeHandler
     {

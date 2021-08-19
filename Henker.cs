@@ -1,17 +1,17 @@
 ﻿
 using ResurrectedEternal.MemoryManager;
-using RRFull.ClientObjects;
-using RRFull.ClientObjects.Cvars;
-using RRFull.Clockwork;
-using RRFull.Configs;
-using RRFull.Configs.ConfigSystem;
-using RRFull.Events;
-using RRFull.GenericObjects;
-using RRFull.Memory;
-using RRFull.Params.CSHelper;
-using RRFull.Skills;
-using RRFull.Skills.EnvironmentSkillMods;
-using RRFull.Skills.GamePlaySkillMods;
+using ResurrectedEternal.ClientObjects;
+using ResurrectedEternal.ClientObjects.Cvars;
+using ResurrectedEternal.Clockwork;
+using ResurrectedEternal.Configs;
+using ResurrectedEternal.Configs.ConfigSystem;
+using ResurrectedEternal.Events;
+using ResurrectedEternal.GenericObjects;
+using ResurrectedEternal.Memory;
+using ResurrectedEternal.Params.CSHelper;
+using ResurrectedEternal.Skills;
+using ResurrectedEternal.Skills.EnvironmentSkillMods;
+using ResurrectedEternal.Skills.GamePlaySkillMods;
 using System;
 using System.Collections.Generic;
 using System.Linq;
@@ -20,6 +20,7 @@ using System.Runtime.ExceptionServices;
 using System.Runtime.InteropServices;
 using System.Text;
 using System.Threading;
+using ResurrectedEternal;
 
 namespace RRFull
 {

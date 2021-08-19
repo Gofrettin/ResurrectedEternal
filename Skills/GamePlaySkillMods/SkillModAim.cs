@@ -1,6 +1,7 @@
-﻿using RRFull.BaseObjects;
-using RRFull.ClientObjects;
-using RRFull.Clockwork;
+﻿using ResurrectedEternal.BaseObjects;
+using ResurrectedEternal.ClientObjects;
+using ResurrectedEternal.Clockwork;
+using ResurrectedEternal.Skills.GamePlaySkillMods.AimExtension;
 using RRWAPI;
 using SharpDX;
 using System;
@@ -9,51 +10,8 @@ using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
 
-namespace RRFull.Skills
+namespace ResurrectedEternal.Skills
 {
-    public class WeaponAccuracy
-    {
-        public ItemDefinitionIndex WeaponIndex;
-        public float m_fHighest;
-        public float m_fLowest = 1f;
-        private float m_fHitChance = 101f;
-        public WeaponAccuracy(ItemDefinitionIndex _index)
-        {
-            WeaponIndex = _index;
-        }
-
-        public bool CanShoot(float _cur, bool inScope)
-        {
-            if (_cur < m_fLowest)
-                m_fLowest = _cur;
-            if (m_fHighest == 0)
-                m_fHighest = _cur * 3f;
-            else if (_cur > m_fHighest || m_fHighest == 0)
-                m_fHighest = _cur;
-            //Console.WriteLine(_cur + "  " + m_fLowest + " - " + m_fHighest + " " + (m_fHighest - m_fLowest) * 1.25f);
-            switch (Generators.GetWeaponType(WeaponIndex))
-            {
-
-                case WeaponClass.HEAVY:
-                    return _cur <= m_fHighest * .888f;
-                case WeaponClass.SMG:
-                    return _cur <= m_fHighest * .666f;
-                case WeaponClass.RIFLE:
-                    return _cur <= m_fHighest * .555f;
-                case WeaponClass.SNIPER:
-                    if (inScope)
-                        return _cur <= m_fHighest * .222f;
-                    else
-                        return _cur <= m_fHighest * .777f;
-                case WeaponClass.PISTOL:
-                    return _cur <= m_fHighest * .3111f;
-                case WeaponClass.KNIFE:
-                case WeaponClass.OTHER:
-                default:
-                    return false;
-            }
-        }
-    }
 
     class SkillModAim : SkillMod
     {
@@ -116,11 +74,8 @@ namespace RRFull.Skills
 
         public override bool Update()
         {
-            //Console.WriteLine(ObjectClock.GetDeltaTick());
             if (!Client.UpdateModules || Client.LocalPlayer == null || !Client.LocalPlayer.IsValid || !Client.LocalPlayer.m_bIsAlive || Client.m_bMouseEnabled || !Engine.IsInGame)
                 return false;
-
-            //Console.WriteLine(Client.LocalPlayer.m_hActiveWeapon.m_fAccuracyPenalty);
 
             if ((!(bool)Config.AimbotConfig.AutoAim.Value && !m_dwMouseHeld) || !m_bValidWeaponType)
             {
@@ -130,7 +85,9 @@ namespace RRFull.Skills
                 Reset();
                 return false;
             }
+
             UpdateAccuracyPenalty();
+
             if ((bool)Config.AimbotConfig.OnGround.Value && !((FL_TYPE)Client.LocalPlayer.m_fFlags).HasFlag(FL_TYPE.FL_ONGROUND))
             {
                 _oldPunch = Vector3.Zero;
@@ -151,21 +108,16 @@ namespace RRFull.Skills
                 if (ChickenAimbot())
                     return false;
             }
+
             //lmao
             if ((bool)Config.AimbotConfig.Enable.Value)
             {
                 var _filteredPlayers = Filter.GetActivePlayers((TargetType)Config.AimbotConfig.AimAt.Value);
-                //var _filteredPlayers = Filter.GetActivePlayers(
-                //    (TargetType)Config.AimbotConfig.AimAt.Value, 
-                //    (bool)Config.AimbotConfig.Wallbang.Value ? false : (bool)Config.AimbotConfig.AimSpottedOnly.Value
-                //    );
 
                 _target = SelectTarget(_filteredPlayers);
 
 
             }
-
-
 
             if (_target == null)
             {
@@ -174,13 +126,6 @@ namespace RRFull.Skills
                 Reset();
                 return false;
             }
-            //else
-            //{
-            //    if ((bool)Config.AimbotConfig.EnableRCS.Value)
-            //        m_vWriteAngles = RecoilControl();
-            //    Reset();
-            //    return false;
-            //}
 
             //select best aimspot
             //but before that we'll check if that spot is hittable.
@@ -189,10 +134,6 @@ namespace RRFull.Skills
                 Reset();
                 return false;
             }
-
-
-
-            //implement wallbang functionality here.
 
             //get new view angle
 
@@ -208,6 +149,7 @@ namespace RRFull.Skills
             //apply recoil control
             if ((bool)Config.AimbotConfig.RCS.Value && m_bwpsrcs)
                 _newAngles = RecoilControl(_newAngles);
+
             //increase fov with recoil control applied
             //apply smooth
             if ((float)Config.AimbotConfig.Smooth.Value > 0f)
@@ -216,6 +158,7 @@ namespace RRFull.Skills
             // sanity check?
             if (float.IsNaN(_newAngles.X) || float.IsNaN(_newAngles.Y) || _newAngles == Vector3.Zero)
                 return false;
+
             m_vWriteAngles = _newAngles;
             _previousTarget = _target;
 
@@ -234,11 +177,7 @@ namespace RRFull.Skills
                     if (m_bCanShoot)
                         Client.LocalPlayer.ForceAttack();
 
-                //if (m_bInFov())
-                //    if (m_bCanShoot)
-                //        Client.LocalPlayer.ForceAttack();
             }
-            //autoshoot
             return true;
         }
 
@@ -555,18 +494,15 @@ namespace RRFull.Skills
             var _pHead = Client.LocalPlayer.m_vEyePosition;
             //Console.WriteLine(_pHead);
             //eye to eye?
-            if (Client.MapManager.VisibleCheckAvailable && (VisibleCheck)Config.OtherConfig.VisibleCheckOption.Value == global::VisibleCheck.RayTrace)
+            if (Client.MapManager.VisibleCheckAvailable && (VisibleCheck)Config.AimbotConfig.VisibleCheckOption.Value == global::VisibleCheck.RayTrace)
                 if (m_bWallBang)
-                    return Client.MapManager.m_dwMap.IsVisible(_pHead, _target.m_v3aPseudoPredict);
+                    return IsVisibleCheck(_pHead, _target.m_v3aPseudoPredict);
                 else
-                    return Client.MapManager.m_dwMap.IsVisible(_pHead, _target.m_vecBody);
+                    return IsVisibleCheck(_pHead, _target.m_vecBody);
             else
                 return VisibleByMask(_target);
         }
-        private bool VisibleByMask(BaseEntity _entity)
-        {
-            return (_entity.m_iSpottedByMask & 1 << Client.m_iLocalPlayerIndex - 1) != 0;
-        }
+
         private bool GetBestAimspot(BasePlayer _target, out Vector3 aimspot)
         {
 
@@ -612,7 +548,7 @@ namespace RRFull.Skills
         {
             var eyePos = Client.LocalPlayer.m_vEyePosition;
             var _playerAngle = Client.LocalPlayer.m_vViewAngles;
-            var _chicks = Filter.GetChickens((bool)Config.AimbotConfig.AimSpottedOnly.Value).OrderBy(
+            var _chicks = Filter.GetChickens(true).OrderBy(
                 x => EngineMath.RealFovDistance(eyePos, _playerAngle, x.Head)
                 ).Where(x => EngineMath.RealFovDistance(eyePos, _playerAngle, x.Head) < (float)Config.AimbotConfig.Angle.Value).ToList();
             if (_chicks == null || _chicks.Count == 0)
