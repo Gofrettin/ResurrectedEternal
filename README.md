@@ -1,6 +1,7 @@
 <h2> Resurrected Eternal (V3)</h2>
 <a href="https://rrcheats.eu">RRCHEATS.EU</a> // <a href="https://FOREVERWARE.gay">FOREVERWARE.GAY</a> // <a href="https://FOREVERWARE.cc">FOREVERWARE.CC</a> // <a href="https://RESURRECTED.cc">RESURRECTED.CC</a>
 <br>
+<a href="https://www.foreverware.gay/page/install" target="_blank">Download Hack</a>
 
 # Summary
 External Counter-Strike: Global Offensive Multihack.<a href="https://github.com/sirk1x/ResurrectedEternalLite">Lite Version</a><br>
