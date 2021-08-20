@@ -52,7 +52,7 @@ Dangerzone AimAt/NeonAt must be set to All to work.<br>
 ### How to Navigate
 
 1. Menukey: Insert
-2. PanicKey: Pos1
+2. PanicKey: Pos1 / Home
 3. Console -> Type !help to get a overview of all available commands.
 
 ### Updating Offsets
