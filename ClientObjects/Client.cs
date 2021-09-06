@@ -561,7 +561,7 @@ namespace ResurrectedEternal.ClientObjects
             return WorldEntites[id] as PredictedViewModel;
             //return GroundWeapons.Where(x => x.Value.m_iIndex == id).First().Value;
         }
-        public async Task<BaseCombatWeapon> GetWeaponById(int id)
+        public BaseCombatWeapon GetWeaponById(int id)
         {
             if (id >= 4095)
                 return null;
@@ -571,7 +571,7 @@ namespace ResurrectedEternal.ClientObjects
                 var _ent = GetEntityPtr(id - 1);
                 if (_ent == IntPtr.Zero)
                     return null;
-                WorldEntites[id] = new BaseCombatWeapon(_ent, await ReadClassId(_ent));
+                WorldEntites[id] = new BaseCombatWeapon(_ent, ReadClassId(_ent));
             }
 
             return WorldEntites[id] as BaseCombatWeapon;
@@ -614,7 +614,7 @@ namespace ResurrectedEternal.ClientObjects
             return null;
         }
 
-        private async Task<ClientClass> ReadClassId(IntPtr _EntityAddress)
+        private ClientClass ReadClassId(IntPtr _EntityAddress)
         {
             try
             {

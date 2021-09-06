@@ -235,17 +235,17 @@ namespace ResurrectedEternal.Skills
         }
 
 
-        private async void RenderBackground()
+        private void RenderBackground()
         {
-            await RenderBack();
+            RenderBack();
         }
 
-        private async void RenderForeground()
+        private  void RenderForeground()
         {
-            await RenderFore();
+            RenderFore();
         }
 
-        private async Task RenderBack()
+        private void RenderBack()
         {
             foreach (var item in BackgroundStrings)
             {
@@ -271,7 +271,7 @@ namespace ResurrectedEternal.Skills
             }
 
         }
-        private async Task RenderFore()
+        private void RenderFore()
         {
             foreach (var item in ForegroundString)
             {

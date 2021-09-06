@@ -387,7 +387,7 @@ namespace ResurrectedEternal.BaseObjects
 
         public BaseCombatWeapon m_hActiveWeapon
         {
-            get { return Henker.Singleton.Client.GetWeaponById(MemoryLoader.instance.Reader.Read<int>(BaseAddress + (int)g_Globals.Offset.m_hActiveWeapon) & 0xFFF).Result; }
+            get { return Henker.Singleton.Client.GetWeaponById(MemoryLoader.instance.Reader.Read<int>(BaseAddress + (int)g_Globals.Offset.m_hActiveWeapon) & 0xFFF); }
         }
 
         private player_info_s _playerInfo = new player_info_s();
