@@ -1110,7 +1110,7 @@ namespace ResurrectedEternal
                      new SerialPattern
                     {
                         Name = "dwClientState_ViewAngles",
-                        Pattern = "F3 0F 11 80 ? ? ? ? F3 0F 10 44 24 38",
+                        Pattern = "F3 0F 11 86 ? ? ? ? F3 0F 10 44 24 ? F3 0F 11 86",
                         Offset = new int[] {4 },
                         Extra = 0,
                         Relative = false
